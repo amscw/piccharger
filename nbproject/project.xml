@@ -6,12 +6,12 @@
             <name>piccharger</name>
             <creation-uuid>2852e851-ad52-4e67-aa00-c2d482e10df0</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>
-            <make-dep-projects/>
             <sourceEncoding>UTF-8</sourceEncoding>
+            <make-dep-projects/>
         </data>
     </configuration>
 </project>
