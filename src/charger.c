@@ -1,16 +1,20 @@
 #include "charger.h"
 #include "sw_i2c.h"
 
-// I2C macro
+//------------------------------------------------------------------------------
+// types
+//------------------------------------------------------------------------------
 enum op_t { WRITE, READ };
 
+//------------------------------------------------------------------------------
+// macro
+//------------------------------------------------------------------------------
 #define CHARGER_ADDR        (0x9 << 1)
-
-// code hacks...
 #define CHECK_FAIL(foo) { err_t err = foo; if (err != ERR_OK) return err; }
 
-// globals
-// TODO: need comment
+//------------------------------------------------------------------------------
+// local variables
+//------------------------------------------------------------------------------
 static chargerMode_t mode = {
     0 /* Allow normal operation */,
     0 /* Not implemented. Write 0 */,
@@ -25,8 +29,17 @@ static chargerMode_t mode = {
     0x1F /* Not implemented. Write 1 */
 };
 
-chargerStatus_t g_ChargerStatus;
+static chargerStatus_t status;
 
+//------------------------------------------------------------------------------
+// channel level support
+//------------------------------------------------------------------------------
+
+/**
+ * implementation of write-command protocol
+ * @param cmd 
+ * @return status
+ */
 static err_t writeCommand(chargerCmd_t cmd)
 {
     // issue start condition
@@ -51,6 +64,11 @@ static err_t writeCommand(chargerCmd_t cmd)
     return ERR_OK;
 }
 
+/**
+ * implementation of read-word protocol
+ * @param pBuf
+ * @return 
+ */
 static err_t readWord(uint16_t *pBuf)
 {
     if (!pBuf)
@@ -77,6 +95,11 @@ static err_t readWord(uint16_t *pBuf)
     return ERR_OK;
 }
 
+/**
+ * implementation of write-word protocol
+ * @param buf
+ * @return 
+ */
 static err_t writeWord(uint16_t buf)
 {
     // write low data byte
@@ -101,6 +124,9 @@ static err_t writeWord(uint16_t buf)
     return ERR_OK;
 }
 
+//------------------------------------------------------------------------------
+// application level support
+//------------------------------------------------------------------------------
 err_t ChargerStatus(chargerStatus_t *pStatus)
 {
     if (!pStatus)
@@ -140,12 +166,40 @@ err_t ChargingCurrent(uint16_t I0)
     return ERR_OK;
 }
 
-err_t ChargerVoltage(uint16_t V0)
+err_t ChargingVoltage(uint16_t V0)
 {
-    CHECK_FAIL(writeCommand(CHARGER_VOLTAGE));
+    CHECK_FAIL(writeCommand(CHARGING_VOLTAGE));
     CHECK_FAIL(writeWord(V0));
     
     return ERR_OK;
 }
 
+/**
+ * check change in status. Updates status if changed. 
+ * @return ERR_OK if changed, ERR_NO if no change, ERR_XXX if error
+ */
+err_t IsChargerStatusChange()
+{
+    err_t err;
+    uint8_t attempts = 3;
+    chargerStatus_t tmp;
+    
+    while ( ((err = ChargerStatus(&tmp)) != ERR_OK) && attempts--) 
+        __delay_ms(100);
+    
+    if (err == ERR_OK)
+    {    
+        if (tmp.word != status.word)
+        {
+            status.word = tmp.word;
+            return ERR_TRUE;
+        } else return ERR_OK;
+    }
+    
+    return err;
+}
 
+inline chargerStatus_t GetChargerStatus()
+{
+    return status;
+}

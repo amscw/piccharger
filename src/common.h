@@ -25,6 +25,7 @@ extern "C" {
  
 typedef enum err_ { 
     ERR_OK,
+    ERR_TRUE,
     ERR_NULLPTR,
     ERR_SWI2C_READ,        
     ERR_SWI2C_WRITE,

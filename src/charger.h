@@ -20,8 +20,8 @@ extern "C" {
         struct {
             unsigned CHARGE_INHIBITED : 1;
             unsigned MASTER_MODE : 1;
-            unsigned VOLTAGE_NOTREG : 1;
-            unsigned CURRENT_NOTREG : 1;
+            unsigned VOLTAGE_NOTREG : 1;        // "not regulated" 1 - ???????? ?????? ????????????? ?? ???? 
+            unsigned CURRENT_NOTREG : 1;        // "not regulated" 1 - ???????? ?????? ????????????? ?? ?????????? 
             unsigned LEVEL_2 : 1;
             unsigned LEVEL_3 : 1;
             unsigned CURRENT_OR : 1;
@@ -31,7 +31,7 @@ extern "C" {
             unsigned THERMISTOR_HOT : 1;
             unsigned THERMISTOR_UR : 1;
             unsigned ALARM_INHIBITED : 1;
-            unsigned POWER_FAIL : 1;
+            unsigned POWER_FAIL : 1;            // 1 - Vbatt > 89% Vdcin
             unsigned BATTERY_PRESENT : 1;
             unsigned AC_PRESENT : 1;
         } bits;
@@ -60,19 +60,21 @@ extern "C" {
     {
         CHARGER_MODE = 0x12,
         CHARGING_CURRENT = 0x14,
-        CHARGER_VOLTAGE = 0x15,
+        CHARGING_VOLTAGE = 0x15,
         CHARGER_ALARM_WARNING = 0x16,
         CHARGER_STATUS = 0x13,
     } chargerCmd_t;
    
-    
-    extern chargerStatus_t g_ChargerStatus;
-    
+       
     err_t ChargerStatus(chargerStatus_t *pStatus);
     err_t ChargerMode(chargerMode_t chargerMode);
     err_t ChargerReset();
     err_t ChargingCurrent(uint16_t I0);
-    err_t ChargerVoltage(uint16_t V0);
+    err_t ChargingVoltage(uint16_t V0);
+    err_t IsChargerStatusChange();
+    inline chargerStatus_t GetChargerStatus();
+    
+
 
     
 #ifdef	__cplusplus

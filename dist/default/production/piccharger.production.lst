@@ -1,0 +1,2582 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.45 build -152302408 
+                                                                                               Sun Apr 08 14:27:15 2018
+
+Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
+     1                           	processor	18F14K22
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1,noexec
+     6                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     8                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    11                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    20                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    21                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    22                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    23                           	psect	text12,global,reloc=2,class=CODE,delta=1
+    24                           	psect	text13,global,reloc=2,class=CODE,delta=1
+    25                           	psect	text14,global,reloc=2,class=CODE,delta=1
+    26                           	psect	text15,global,reloc=2,class=CODE,delta=1
+    27                           	psect	text16,global,reloc=2,class=CODE,delta=1,group=1
+    28                           	psect	text17,global,reloc=2,class=CODE,delta=1
+    29                           	psect	text18,global,reloc=2,class=CODE,delta=1
+    30                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    31                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    32  0000                     
+    33                           ; Version 1.45
+    34                           ; Generated 16/11/2017 GMT
+    35                           ; 
+    36                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    37                           ; All rights reserved.
+    38                           ; 
+    39                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    40                           ; 
+    41                           ; Redistribution and use in source and binary forms, with or without modification, are
+    42                           ; permitted provided that the following conditions are met:
+    43                           ; 
+    44                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    45                           ;        conditions and the following disclaimer.
+    46                           ; 
+    47                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    48                           ;        of conditions and the following disclaimer in the documentation and/or other
+    49                           ;        materials provided with the distribution.
+    50                           ; 
+    51                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    52                           ;        software without specific prior written permission.
+    53                           ; 
+    54                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    55                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    56                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    57                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    58                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    59                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    60                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    61                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    62                           ; 
+    63                           ; 
+    64                           ; Code-generator required, PIC18F14K22 Definitions
+    65                           ; 
+    66                           ; SFR Addresses
+    67  0000                     
+    68                           	psect	idataCOMRAM
+    69  00067E                     __pidataCOMRAM:
+    70                           	opt stack 0
+    71                           
+    72                           ;initializer for _mode
+    73  00067E  94                 	db	148
+    74  00067F  FB                 	db	251
+    75                           
+    76                           	psect	smallconst
+    77  000200                     __psmallconst:
+    78                           	opt stack 0
+    79  000200  00                 	db	0
+    80  000201                     _coefficient_AS:
+    81                           	opt stack 0
+    82  000201  00                 	db	0
+    83  000202  48                 	db	72
+    84  000203  3F                 	db	63
+    85  000204                     __end_of_coefficient_AS:
+    86                           	opt stack 0
+    87  000204                     _coefficient_Remaining:
+    88                           	opt stack 0
+    89  000204  CD                 	db	205
+    90  000205  CC                 	db	204
+    91  000206  3F                 	db	63
+    92  000207                     __end_of_coefficient_Remaining:
+    93                           	opt stack 0
+    94  000207                     _coefficient_ACR:
+    95                           	opt stack 0
+    96  000207  76                 	db	118
+    97  000208  91                 	db	145
+    98  000209  3E                 	db	62
+    99  00020A                     __end_of_coefficient_ACR:
+   100                           	opt stack 0
+   101  00020A                     _coefficient_U:
+   102                           	opt stack 0
+   103  00020A  29                 	db	41
+   104  00020B  9C                 	db	156
+   105  00020C  40                 	db	64
+   106  00020D                     __end_of_coefficient_U:
+   107                           	opt stack 0
+   108  00020D                     _coefficient_T:
+   109                           	opt stack 0
+   110  00020D  00                 	db	0
+   111  00020E  00                 	db	0
+   112  00020F  3E                 	db	62
+   113  000210                     __end_of_coefficient_T:
+   114                           	opt stack 0
+   115  000210                     _coefficient_I:
+   116                           	opt stack 0
+   117  000210  68                 	db	104
+   118  000211  91                 	db	145
+   119  000212  3D                 	db	61
+   120  000213                     __end_of_coefficient_I:
+   121                           	opt stack 0
+   122  0000                     _STATUS	set	4056
+   123  0000                     _STATUSbits	set	4056
+   124  0000                     _PORTCbits	set	3970
+   125  0000                     _TRISCbits	set	3988
+   126  0000                     _LATCbits	set	3979
+   127  0000                     _ANSEL	set	3966
+   128  0000                     _OSCCONbits	set	4051
+   129  0000                     _LATB7	set	31831
+   130  0000                     _TRISB7	set	31903
+   131                           
+   132                           ; #config settings
+   133  000213  00                 	db	0	; dummy byte at the end
+   134  0000                     
+   135                           	psect	cinit
+   136  00052A                     __pcinit:
+   137                           	opt stack 0
+   138  00052A                     start_initialization:
+   139                           	opt stack 0
+   140  00052A                     __initialization:
+   141                           	opt stack 0
+   142                           
+   143                           ; Initialize objects allocated to COMRAM (2 bytes)
+   144                           ; load TBLPTR registers with __pidataCOMRAM
+   145  00052A  0E7E               	movlw	low __pidataCOMRAM
+   146  00052C  6EF6               	movwf	tblptrl,c
+   147  00052E  0E06               	movlw	high __pidataCOMRAM
+   148  000530  6EF7               	movwf	tblptrh,c
+   149  000532  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   150  000534  6EF8               	movwf	tblptru,c
+   151  000536  0009               	tblrd		*+	;fetch initializer
+   152  000538  CFF5 F022          	movff	tablat,__pdataCOMRAM
+   153  00053C  0009               	tblrd		*+	;fetch initializer
+   154  00053E  CFF5 F023          	movff	tablat,__pdataCOMRAM+1
+   155                           
+   156                           ; Clear objects allocated to COMRAM (12 bytes)
+   157  000542  EE00  F016         	lfsr	0,__pbssCOMRAM
+   158  000546  0E0C               	movlw	12
+   159  000548                     clear_0:
+   160  000548  6AEE               	clrf	postinc0,c
+   161  00054A  06E8               	decf	wreg,f,c
+   162  00054C  E1FD               	bnz	clear_0
+   163  00054E                     end_of_initialization:
+   164                           	opt stack 0
+   165  00054E                     __end_of__initialization:
+   166                           	opt stack 0
+   167  00054E  0E00               	movlw	low (__Lsmallconst shr (0+16))
+   168  000550  6EF8               	movwf	tblptru,c
+   169  000552  0E02               	movlw	high __Lsmallconst
+   170  000554  6EF7               	movwf	tblptrh,c
+   171  000556  0100               	movlb	0
+   172  000558  EF79  F002         	goto	_main	;jump to C main() function
+   173                           tblptru	equ	0xFF8
+   174                           tblptrh	equ	0xFF7
+   175                           tblptrl	equ	0xFF6
+   176                           tablat	equ	0xFF5
+   177                           postinc0	equ	0xFEE
+   178                           wreg	equ	0xFE8
+   179                           
+   180                           	psect	bssCOMRAM
+   181  000016                     __pbssCOMRAM:
+   182                           	opt stack 0
+   183  000016                     _addr_msb:
+   184                           	opt stack 0
+   185  000016                     	ds	4
+   186  00001A                     _addr_lsb:
+   187                           	opt stack 0
+   188  00001A                     	ds	4
+   189  00001E                     _status:
+   190                           	opt stack 0
+   191  00001E                     	ds	2
+   192  000020                     _BIT_COUNTER:
+   193                           	opt stack 0
+   194  000020                     	ds	1
+   195  000021                     _I2C_BUFFER:
+   196                           	opt stack 0
+   197  000021                     	ds	1
+   198                           tblptru	equ	0xFF8
+   199                           tblptrh	equ	0xFF7
+   200                           tblptrl	equ	0xFF6
+   201                           tablat	equ	0xFF5
+   202                           postinc0	equ	0xFEE
+   203                           wreg	equ	0xFE8
+   204                           
+   205                           	psect	dataCOMRAM
+   206  000022                     __pdataCOMRAM:
+   207                           	opt stack 0
+   208  000022                     _mode:
+   209                           	opt stack 0
+   210  000022                     	ds	2
+   211                           tblptru	equ	0xFF8
+   212                           tblptrh	equ	0xFF7
+   213                           tblptrl	equ	0xFF6
+   214                           tablat	equ	0xFF5
+   215                           postinc0	equ	0xFEE
+   216                           wreg	equ	0xFE8
+   217                           
+   218                           	psect	cstackCOMRAM
+   219  000001                     __pcstackCOMRAM:
+   220                           	opt stack 0
+   221  000001                     Delay10TCYx@unit:
+   222                           	opt stack 0
+   223                           
+   224                           ; 1 bytes @ 0x0
+   225  000001                     	ds	1
+   226  000002                     ?_SWReadI2C:
+   227                           	opt stack 0
+   228  000002                     SWWriteI2C@data_out:
+   229                           	opt stack 0
+   230                           
+   231                           ; 1 bytes @ 0x1
+   232  000002                     	ds	1
+   233  000003                     writeCommand@cmd:
+   234                           	opt stack 0
+   235  000003                     writeWord@buf:
+   236                           	opt stack 0
+   237                           
+   238                           ; 2 bytes @ 0x2
+   239  000003                     	ds	1
+   240  000004                     SWGetsI2C@rdptr:
+   241                           	opt stack 0
+   242                           
+   243                           ; 2 bytes @ 0x3
+   244  000004                     	ds	1
+   245  000005                     ChargerMode@chargerMode:
+   246                           	opt stack 0
+   247  000005                     ChargingCurrent@I0:
+   248                           	opt stack 0
+   249  000005                     ChargingVoltage@V0:
+   250                           	opt stack 0
+   251                           
+   252                           ; 2 bytes @ 0x4
+   253  000005                     	ds	1
+   254  000006                     SWGetsI2C@length:
+   255                           	opt stack 0
+   256                           
+   257                           ; 1 bytes @ 0x5
+   258  000006                     	ds	1
+   259  000007                     ChargerMode@err:
+   260                           	opt stack 0
+   261  000007                     ChargingCurrent@err:
+   262                           	opt stack 0
+   263  000007                     ChargingVoltage@err:
+   264                           	opt stack 0
+   265  000007                     SWGetsI2C@thold:
+   266                           	opt stack 0
+   267                           
+   268                           ; 2 bytes @ 0x6
+   269  000007                     	ds	1
+   270  000008                     ChargerMode@err_530:
+   271                           	opt stack 0
+   272  000008                     ChargingCurrent@err_550:
+   273                           	opt stack 0
+   274  000008                     ChargingVoltage@err_554:
+   275                           	opt stack 0
+   276                           
+   277                           ; 1 bytes @ 0x7
+   278  000008                     	ds	1
+   279  000009                     ChargerReset@err:
+   280                           	opt stack 0
+   281  000009                     readWord@pBuf:
+   282                           	opt stack 0
+   283                           
+   284                           ; 2 bytes @ 0x8
+   285  000009                     	ds	1
+   286  00000A                     ChargerReset@err_546:
+   287                           	opt stack 0
+   288                           
+   289                           ; 1 bytes @ 0x9
+   290  00000A                     	ds	1
+   291  00000B                     ChargerStatus@pStatus:
+   292                           	opt stack 0
+   293                           
+   294                           ; 2 bytes @ 0xA
+   295  00000B                     	ds	2
+   296  00000D                     ChargerStatus@err:
+   297                           	opt stack 0
+   298                           
+   299                           ; 1 bytes @ 0xC
+   300  00000D                     	ds	1
+   301  00000E                     ChargerStatus@err_512:
+   302                           	opt stack 0
+   303                           
+   304                           ; 1 bytes @ 0xD
+   305  00000E                     	ds	1
+   306  00000F                     ??_IsChargerStatusChange:
+   307                           
+   308                           ; 1 bytes @ 0xE
+   309  00000F                     	ds	2
+   310  000011                     IsChargerStatusChange@attempts:
+   311                           	opt stack 0
+   312                           
+   313                           ; 1 bytes @ 0x10
+   314  000011                     	ds	1
+   315  000012                     IsChargerStatusChange@err:
+   316                           	opt stack 0
+   317                           
+   318                           ; 1 bytes @ 0x11
+   319  000012                     	ds	1
+   320  000013                     IsChargerStatusChange@tmp:
+   321                           	opt stack 0
+   322                           
+   323                           ; 2 bytes @ 0x12
+   324  000013                     	ds	2
+   325  000015                     main@err:
+   326                           	opt stack 0
+   327                           
+   328                           ; 1 bytes @ 0x14
+   329  000015                     	ds	1
+   330                           tblptru	equ	0xFF8
+   331                           tblptrh	equ	0xFF7
+   332                           tblptrl	equ	0xFF6
+   333                           tablat	equ	0xFF5
+   334                           postinc0	equ	0xFEE
+   335                           wreg	equ	0xFE8
+   336                           
+   337 ;;
+   338 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   339 ;;
+   340 ;; *************** function _main *****************
+   341 ;; Defined at:
+   342 ;;		line 17 in file "src/main.c"
+   343 ;; Parameters:    Size  Location     Type
+   344 ;;		None
+   345 ;; Auto vars:     Size  Location     Type
+   346 ;;  err             1   20[COMRAM] enum E2879
+   347 ;; Return value:  Size  Location     Type
+   348 ;;                  1    wreg      void 
+   349 ;; Registers used:
+   350 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   351 ;; Tracked objects:
+   352 ;;		On entry : 0/0
+   353 ;;		On exit  : 0/0
+   354 ;;		Unchanged: 0/0
+   355 ;; Data sizes:     COMRAM   BANK0   BANK1
+   356 ;;      Params:         0       0       0
+   357 ;;      Locals:         1       0       0
+   358 ;;      Temps:          0       0       0
+   359 ;;      Totals:         1       0       0
+   360 ;;Total ram usage:        1 bytes
+   361 ;; Hardware stack levels required when called:    7
+   362 ;; This function calls:
+   363 ;;		_ChargerReset
+   364 ;;		_ChargingCurrent
+   365 ;;		_ChargingVoltage
+   366 ;;		_IsChargerStatusChange
+   367 ;; This function is called by:
+   368 ;;		Startup code after reset
+   369 ;; This function uses a non-reentrant model
+   370 ;;
+   371                           
+   372                           	psect	text0
+   373  0004F2                     __ptext0:
+   374                           	opt stack 0
+   375  0004F2                     _main:
+   376                           	opt stack 24
+   377                           
+   378                           ;main.c: 18: err_t err;
+   379                           ;main.c: 21: OSCCONbits.IRCF = 0x6;
+   380                           
+   381                           ;incstack = 0
+   382  0004F2  50D3               	movf	4051,w,c	;volatile
+   383  0004F4  0B8F               	andlw	-113
+   384  0004F6  0960               	iorlw	96
+   385  0004F8  6ED3               	movwf	4051,c	;volatile
+   386  0004FA  A4D3               	btfss	4051,2,c	;volatile
+   387  0004FC  D7FE               	goto	l328
+   388                           
+   389                           ;main.c: 25: ANSEL = 0;
+   390  0004FE  0E00               	movlw	0
+   391  000500  6E7E               	movwf	3966,c	;volatile
+   392                           
+   393                           ;main.c: 28: err = ChargerReset();
+   394  000502  EC5C  F002         	call	_ChargerReset	;wreg free
+   395  000506  6E15               	movwf	main@err,c
+   396                           
+   397                           ;main.c: 29: err = ChargingVoltage(16500);
+   398  000508  0E40               	movlw	64
+   399  00050A  6E06               	movwf	ChargingVoltage@V0+1,c
+   400  00050C  0E74               	movlw	116
+   401  00050E  6E05               	movwf	ChargingVoltage@V0,c
+   402  000510  ECAE  F002         	call	_ChargingVoltage	;wreg free
+   403  000514  6E15               	movwf	main@err,c
+   404                           
+   405                           ;main.c: 30: err = ChargingCurrent(1000);
+   406  000516  0E03               	movlw	3
+   407  000518  6E06               	movwf	ChargingCurrent@I0+1,c
+   408  00051A  0EE8               	movlw	232
+   409  00051C  6E05               	movwf	ChargingCurrent@I0,c
+   410  00051E  ECC5  F002         	call	_ChargingCurrent	;wreg free
+   411  000522  6E15               	movwf	main@err,c
+   412  000524                     
+   413                           ;main.c: 33: {
+   414                           ;main.c: 34: if (IsChargerStatusChange() == ERR_TRUE)
+   415  000524  EC75  F001         	call	_IsChargerStatusChange	;wreg free
+   416                           
+   417                           ;main.c: 35: {
+   418  000528  D7FD               	goto	l330
+   419  00052A                     __end_of_main:
+   420                           	opt stack 0
+   421                           tblptru	equ	0xFF8
+   422                           tblptrh	equ	0xFF7
+   423                           tblptrl	equ	0xFF6
+   424                           tablat	equ	0xFF5
+   425                           postinc0	equ	0xFEE
+   426                           wreg	equ	0xFE8
+   427                           
+   428 ;; *************** function _IsChargerStatusChange *****************
+   429 ;; Defined at:
+   430 ;;		line 181 in file "src/charger.c"
+   431 ;; Parameters:    Size  Location     Type
+   432 ;;		None
+   433 ;; Auto vars:     Size  Location     Type
+   434 ;;  tmp             2   18[COMRAM] struct .
+   435 ;;  err             1   17[COMRAM] enum E29
+   436 ;;  attempts        1   16[COMRAM] unsigned char 
+   437 ;; Return value:  Size  Location     Type
+   438 ;;                  1    wreg      enum E29
+   439 ;; Registers used:
+   440 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   441 ;; Tracked objects:
+   442 ;;		On entry : 0/0
+   443 ;;		On exit  : 0/0
+   444 ;;		Unchanged: 0/0
+   445 ;; Data sizes:     COMRAM   BANK0   BANK1
+   446 ;;      Params:         0       0       0
+   447 ;;      Locals:         4       0       0
+   448 ;;      Temps:          2       0       0
+   449 ;;      Totals:         6       0       0
+   450 ;;Total ram usage:        6 bytes
+   451 ;; Hardware stack levels used:    1
+   452 ;; Hardware stack levels required when called:    6
+   453 ;; This function calls:
+   454 ;;		_ChargerStatus
+   455 ;; This function is called by:
+   456 ;;		_main
+   457 ;; This function uses a non-reentrant model
+   458 ;;
+   459                           
+   460                           	psect	text1
+   461  0002EA                     __ptext1:
+   462                           	opt stack 0
+   463  0002EA                     _IsChargerStatusChange:
+   464                           	opt stack 24
+   465                           
+   466                           ;charger.c: 183: err_t err;
+   467                           ;charger.c: 184: uint8_t attempts = 3;
+   468                           
+   469                           ;incstack = 0
+   470  0002EA  0E03               	movlw	3
+   471  0002EC  6E11               	movwf	IsChargerStatusChange@attempts,c
+   472                           
+   473                           ;charger.c: 185: chargerStatus_t tmp;
+   474                           ;charger.c: 187: while ( ((err = ChargerStatus(&tmp)) != ERR_OK) && attempts--)
+   475  0002EE  D00C               	goto	l295
+   476  0002F0                     
+   477                           ;charger.c: 188: _delay((unsigned long)((100)*(8000000/4000.0)));
+   478  0002F0  0E02               	movlw	2
+   479  0002F2  6E10               	movwf	(??_IsChargerStatusChange+1)& (0+255),c
+   480  0002F4  0E04               	movlw	4
+   481  0002F6  6E0F               	movwf	??_IsChargerStatusChange& (0+255),c
+   482  0002F8  0EBA               	movlw	186
+   483  0002FA                     u1507:
+   484  0002FA  2EE8               	decfsz	wreg,f,c
+   485  0002FC  D7FE               	bra	u1507
+   486  0002FE  2E0F               	decfsz	??_IsChargerStatusChange& (0+255),f,c
+   487  000300  D7FC               	bra	u1507
+   488  000302  2E10               	decfsz	(??_IsChargerStatusChange+1)& (0+255),f,c
+   489  000304  D7FA               	bra	u1507
+   490  000306  D000               	nop2	
+   491  000308                     l295:
+   492  000308  0E13               	movlw	low IsChargerStatusChange@tmp
+   493  00030A  6E0B               	movwf	ChargerStatus@pStatus,c
+   494  00030C  0E00               	movlw	high IsChargerStatusChange@tmp
+   495  00030E  6E0C               	movwf	ChargerStatus@pStatus+1,c
+   496  000310  EC3F  F002         	call	_ChargerStatus	;wreg free
+   497  000314  6E12               	movwf	IsChargerStatusChange@err,c
+   498  000316  5012               	movf	IsChargerStatusChange@err,w,c
+   499  000318  B4D8               	btfsc	status,2,c
+   500  00031A  D004               	goto	u1460
+   501  00031C  0611               	decf	IsChargerStatusChange@attempts,f,c
+   502  00031E  2811               	incf	IsChargerStatusChange@attempts,w,c
+   503  000320  A4D8               	btfss	status,2,c
+   504  000322  D7E6               	goto	l296
+   505  000324                     u1460:
+   506                           
+   507                           ;charger.c: 190: if (err == ERR_OK)
+   508  000324  5012               	movf	IsChargerStatusChange@err,w,c
+   509  000326  A4D8               	btfss	status,2,c
+   510  000328  D00F               	goto	l303
+   511                           
+   512                           ;charger.c: 191: {
+   513                           ;charger.c: 192: if (tmp.word != status.word)
+   514  00032A  501E               	movf	_status,w,c
+   515  00032C  1813               	xorwf	IsChargerStatusChange@tmp,w,c
+   516  00032E  E104               	bnz	u1480
+   517  000330  501F               	movf	_status+1,w,c
+   518  000332  1814               	xorwf	IsChargerStatusChange@tmp+1,w,c
+   519  000334  B4D8               	btfsc	status,2,c
+   520  000336  D006               	goto	l301
+   521  000338                     u1480:
+   522                           
+   523                           ;charger.c: 193: {
+   524                           ;charger.c: 194: status.word = tmp.word;
+   525  000338  C013  F01E         	movff	IsChargerStatusChange@tmp,_status
+   526  00033C  C014  F01F         	movff	IsChargerStatusChange@tmp+1,_status+1
+   527                           
+   528                           ;charger.c: 195: return ERR_TRUE;
+   529  000340  0E01               	movlw	1
+   530  000342  0012               	return	
+   531  000344                     l301:
+   532  000344  0E00               	movlw	0
+   533  000346  0012               	return	
+   534  000348                     l303:
+   535                           
+   536                           ;charger.c: 197: }
+   537                           ;charger.c: 199: return err;
+   538  000348  5012               	movf	IsChargerStatusChange@err,w,c
+   539  00034A  0012               	return	
+   540  00034C                     __end_of_IsChargerStatusChange:
+   541                           	opt stack 0
+   542                           tblptru	equ	0xFF8
+   543                           tblptrh	equ	0xFF7
+   544                           tblptrl	equ	0xFF6
+   545                           tablat	equ	0xFF5
+   546                           postinc0	equ	0xFEE
+   547                           wreg	equ	0xFE8
+   548                           status	equ	0xFD8
+   549                           
+   550 ;; *************** function _ChargerStatus *****************
+   551 ;; Defined at:
+   552 ;;		line 130 in file "src/charger.c"
+   553 ;; Parameters:    Size  Location     Type
+   554 ;;  pStatus         2   10[COMRAM] PTR struct .
+   555 ;;		 -> IsChargerStatusChange@tmp(2), 
+   556 ;; Auto vars:     Size  Location     Type
+   557 ;;  err             1   13[COMRAM] enum E29
+   558 ;;  err             1   12[COMRAM] enum E29
+   559 ;; Return value:  Size  Location     Type
+   560 ;;                  1    wreg      enum E29
+   561 ;; Registers used:
+   562 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   563 ;; Tracked objects:
+   564 ;;		On entry : 0/0
+   565 ;;		On exit  : 0/0
+   566 ;;		Unchanged: 0/0
+   567 ;; Data sizes:     COMRAM   BANK0   BANK1
+   568 ;;      Params:         2       0       0
+   569 ;;      Locals:         2       0       0
+   570 ;;      Temps:          0       0       0
+   571 ;;      Totals:         4       0       0
+   572 ;;Total ram usage:        4 bytes
+   573 ;; Hardware stack levels used:    1
+   574 ;; Hardware stack levels required when called:    5
+   575 ;; This function calls:
+   576 ;;		_readWord
+   577 ;;		_writeCommand
+   578 ;; This function is called by:
+   579 ;;		_IsChargerStatusChange
+   580 ;; This function uses a non-reentrant model
+   581 ;;
+   582                           
+   583                           	psect	text2
+   584  00047E                     __ptext2:
+   585                           	opt stack 0
+   586  00047E                     _ChargerStatus:
+   587                           	opt stack 24
+   588                           
+   589                           ;charger.c: 132: if (!pStatus)
+   590                           
+   591                           ;incstack = 0
+   592  00047E  500B               	movf	ChargerStatus@pStatus,w,c
+   593  000480  100C               	iorwf	ChargerStatus@pStatus+1,w,c
+   594  000482  A4D8               	btfss	status,2,c
+   595  000484  D002               	goto	l269
+   596                           
+   597                           ;charger.c: 133: return ERR_NULLPTR;
+   598  000486  0E02               	movlw	2
+   599  000488  0012               	return	
+   600  00048A                     l269:
+   601                           
+   602                           ;charger.c: 135: { err_t err = writeCommand(CHARGER_STATUS); if (err != ERR_OK) return e
+      +                          rr; };
+   603  00048A  0E13               	movlw	19
+   604  00048C  ECD1  F001         	call	_writeCommand
+   605  000490  6E0D               	movwf	ChargerStatus@err,c
+   606  000492  500D               	movf	ChargerStatus@err,w,c
+   607  000494  B4D8               	btfsc	status,2,c
+   608  000496  D002               	goto	l271
+   609  000498  500D               	movf	ChargerStatus@err,w,c
+   610  00049A  0012               	return	
+   611  00049C                     l271:
+   612                           
+   613                           ;charger.c: 136: { err_t err = readWord(&pStatus->word); if (err != ERR_OK) return err; 
+      +                          };
+   614  00049C  C00B  F009         	movff	ChargerStatus@pStatus,readWord@pBuf
+   615  0004A0  C00C  F00A         	movff	ChargerStatus@pStatus+1,readWord@pBuf+1
+   616  0004A4  ECA6  F001         	call	_readWord	;wreg free
+   617  0004A8  6E0E               	movwf	ChargerStatus@err_512,c
+   618  0004AA  500E               	movf	ChargerStatus@err_512,w,c
+   619  0004AC  B4D8               	btfsc	status,2,c
+   620  0004AE  D002               	goto	l272
+   621  0004B0  500E               	movf	ChargerStatus@err_512,w,c
+   622  0004B2  0012               	return	
+   623  0004B4                     l272:
+   624                           
+   625                           ;charger.c: 138: return ERR_OK;
+   626  0004B4  0E00               	movlw	0
+   627  0004B6  0012               	return	
+   628  0004B8                     __end_of_ChargerStatus:
+   629                           	opt stack 0
+   630                           tblptru	equ	0xFF8
+   631                           tblptrh	equ	0xFF7
+   632                           tblptrl	equ	0xFF6
+   633                           tablat	equ	0xFF5
+   634                           postinc0	equ	0xFEE
+   635                           wreg	equ	0xFE8
+   636                           status	equ	0xFD8
+   637                           
+   638 ;; *************** function _readWord *****************
+   639 ;; Defined at:
+   640 ;;		line 72 in file "src/charger.c"
+   641 ;; Parameters:    Size  Location     Type
+   642 ;;  pBuf            2    8[COMRAM] PTR unsigned int 
+   643 ;;		 -> IsChargerStatusChange@tmp(2), 
+   644 ;; Auto vars:     Size  Location     Type
+   645 ;;		None
+   646 ;; Return value:  Size  Location     Type
+   647 ;;                  1    wreg      enum E29
+   648 ;; Registers used:
+   649 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   650 ;; Tracked objects:
+   651 ;;		On entry : 0/0
+   652 ;;		On exit  : 0/0
+   653 ;;		Unchanged: 0/0
+   654 ;; Data sizes:     COMRAM   BANK0   BANK1
+   655 ;;      Params:         2       0       0
+   656 ;;      Locals:         0       0       0
+   657 ;;      Temps:          0       0       0
+   658 ;;      Totals:         2       0       0
+   659 ;;Total ram usage:        2 bytes
+   660 ;; Hardware stack levels used:    1
+   661 ;; Hardware stack levels required when called:    4
+   662 ;; This function calls:
+   663 ;;		_SWAckI2C
+   664 ;;		_SWGetsI2C
+   665 ;;		_SWRestartI2C
+   666 ;;		_SWStopI2C
+   667 ;;		_SWWriteI2C
+   668 ;; This function is called by:
+   669 ;;		_ChargerStatus
+   670 ;; This function uses a non-reentrant model
+   671 ;;
+   672                           
+   673                           	psect	text3
+   674  00034C                     __ptext3:
+   675                           	opt stack 0
+   676  00034C                     _readWord:
+   677                           	opt stack 24
+   678                           
+   679                           ;charger.c: 74: if (!pBuf)
+   680                           
+   681                           ;incstack = 0
+   682  00034C  5009               	movf	readWord@pBuf,w,c
+   683  00034E  100A               	iorwf	readWord@pBuf+1,w,c
+   684  000350  A4D8               	btfss	status,2,c
+   685  000352  D002               	goto	l255
+   686                           
+   687                           ;charger.c: 75: return ERR_NULLPTR;
+   688  000354  0E02               	movlw	2
+   689  000356  0012               	return	
+   690  000358                     l255:
+   691                           
+   692                           ;charger.c: 78: SWRestartI2C();
+   693  000358  ECF3  F002         	call	_SWRestartI2C	;wreg free
+   694                           
+   695                           ;charger.c: 81: if (SWWriteI2C((0x9 << 1) | READ) < 0)
+   696  00035C  0E13               	movlw	19
+   697  00035E  EC0A  F001         	call	_SWWriteI2C
+   698  000362  0A80               	xorlw	128
+   699  000364  0F80               	addlw	-128
+   700  000366  B0D8               	btfsc	status,0,c
+   701  000368  D002               	goto	l257
+   702                           
+   703                           ;charger.c: 82: return ERR_SWI2C_WRITE;
+   704  00036A  0E04               	movlw	4
+   705  00036C  0012               	return	
+   706  00036E                     l257:
+   707                           
+   708                           ;charger.c: 85: if (SWAckI2C() < 0)
+   709  00036E  EC17  F003         	call	_SWAckI2C	;wreg free
+   710  000372  0A80               	xorlw	128
+   711  000374  0F80               	addlw	-128
+   712  000376  B0D8               	btfsc	status,0,c
+   713  000378  D002               	goto	l258
+   714                           
+   715                           ;charger.c: 86: return ERR_SWI2C_NOACK;
+   716  00037A  0E05               	movlw	5
+   717  00037C  0012               	return	
+   718  00037E                     l258:
+   719                           
+   720                           ;charger.c: 89: if ( SWGetsI2C((uint8_t*)pBuf, sizeof *pBuf) < 0 )
+   721  00037E  C009  F004         	movff	readWord@pBuf,SWGetsI2C@rdptr
+   722  000382  C00A  F005         	movff	readWord@pBuf+1,SWGetsI2C@rdptr+1
+   723  000386  0E02               	movlw	2
+   724  000388  6E06               	movwf	SWGetsI2C@length,c
+   725  00038A  EC40  F001         	call	_SWGetsI2C	;wreg free
+   726  00038E  0A80               	xorlw	128
+   727  000390  0F80               	addlw	-128
+   728  000392  B0D8               	btfsc	status,0,c
+   729  000394  D002               	goto	l259
+   730                           
+   731                           ;charger.c: 90: return ERR_SWI2C_READ;
+   732  000396  0E03               	movlw	3
+   733  000398  0012               	return	
+   734  00039A                     l259:
+   735                           
+   736                           ;charger.c: 93: SWStopI2C();
+   737  00039A  EC06  F003         	call	_SWStopI2C	;wreg free
+   738                           
+   739                           ;charger.c: 95: return ERR_OK;
+   740  00039E  0E00               	movlw	0
+   741  0003A0  0012               	return	
+   742  0003A2                     __end_of_readWord:
+   743                           	opt stack 0
+   744                           tblptru	equ	0xFF8
+   745                           tblptrh	equ	0xFF7
+   746                           tblptrl	equ	0xFF6
+   747                           tablat	equ	0xFF5
+   748                           postinc0	equ	0xFEE
+   749                           wreg	equ	0xFE8
+   750                           status	equ	0xFD8
+   751                           
+   752 ;; *************** function _SWRestartI2C *****************
+   753 ;; Defined at:
+   754 ;;		line 247 in file "src/swi2c.c"
+   755 ;; Parameters:    Size  Location     Type
+   756 ;;		None
+   757 ;; Auto vars:     Size  Location     Type
+   758 ;;		None
+   759 ;; Return value:  Size  Location     Type
+   760 ;;                  1    wreg      void 
+   761 ;; Registers used:
+   762 ;;		wreg
+   763 ;; Tracked objects:
+   764 ;;		On entry : 0/0
+   765 ;;		On exit  : 0/0
+   766 ;;		Unchanged: 0/0
+   767 ;; Data sizes:     COMRAM   BANK0   BANK1
+   768 ;;      Params:         0       0       0
+   769 ;;      Locals:         0       0       0
+   770 ;;      Temps:          0       0       0
+   771 ;;      Totals:         0       0       0
+   772 ;;Total ram usage:        0 bytes
+   773 ;; Hardware stack levels used:    1
+   774 ;; This function calls:
+   775 ;;		Nothing
+   776 ;; This function is called by:
+   777 ;;		_readWord
+   778 ;; This function uses a non-reentrant model
+   779 ;;
+   780                           
+   781                           	psect	text4
+   782  0005E6                     __ptext4:
+   783                           	opt stack 0
+   784  0005E6                     _SWRestartI2C:
+   785                           	opt stack 27
+   786                           
+   787                           ;swi2c.c: 249: LATCbits.LATC0 = 0;
+   788                           
+   789                           ;incstack = 0
+   790  0005E6  908B               	bcf	3979,0,c	;volatile
+   791                           
+   792                           ;swi2c.c: 250: TRISCbits.TRISC0 = 0;;
+   793  0005E8  9094               	bcf	3988,0,c	;volatile
+   794                           
+   795                           ;swi2c.c: 251: TRISCbits.TRISC1 = 1;;
+   796  0005EA  8294               	bsf	3988,1,c	;volatile
+   797                           
+   798                           ;swi2c.c: 252: _delay(10);
+   799  0005EC  0E03               	movlw	3
+   800  0005EE                     u1517:
+   801  0005EE  2EE8               	decfsz	wreg,f,c
+   802  0005F0  D7FE               	bra	u1517
+   803  0005F2  F000               	nop	
+   804                           
+   805                           ;swi2c.c: 253: TRISCbits.TRISC0 = 1;;
+   806  0005F4  8094               	bsf	3988,0,c	;volatile
+   807                           
+   808                           ;swi2c.c: 254: _delay(10);
+   809  0005F6  0E03               	movlw	3
+   810  0005F8                     u1527:
+   811  0005F8  2EE8               	decfsz	wreg,f,c
+   812  0005FA  D7FE               	bra	u1527
+   813  0005FC  F000               	nop	
+   814                           
+   815                           ;swi2c.c: 255: LATCbits.LATC1 = 0;
+   816  0005FE  928B               	bcf	3979,1,c	;volatile
+   817                           
+   818                           ;swi2c.c: 256: TRISCbits.TRISC1 = 0;;
+   819  000600  9294               	bcf	3988,1,c	;volatile
+   820                           
+   821                           ;swi2c.c: 257: _delay(10);
+   822  000602  0E03               	movlw	3
+   823  000604                     u1537:
+   824  000604  2EE8               	decfsz	wreg,f,c
+   825  000606  D7FE               	bra	u1537
+   826  000608  F000               	nop	
+   827  00060A  0012               	return		;funcret
+   828  00060C                     __end_of_SWRestartI2C:
+   829                           	opt stack 0
+   830                           tblptru	equ	0xFF8
+   831                           tblptrh	equ	0xFF7
+   832                           tblptrl	equ	0xFF6
+   833                           tablat	equ	0xFF5
+   834                           postinc0	equ	0xFEE
+   835                           wreg	equ	0xFE8
+   836                           status	equ	0xFD8
+   837                           
+   838 ;; *************** function _SWGetsI2C *****************
+   839 ;; Defined at:
+   840 ;;		line 117 in file "src/swi2c.c"
+   841 ;; Parameters:    Size  Location     Type
+   842 ;;  rdptr           2    3[COMRAM] PTR unsigned char 
+   843 ;;		 -> IsChargerStatusChange@tmp(2), 
+   844 ;;  length          1    5[COMRAM] unsigned char 
+   845 ;; Auto vars:     Size  Location     Type
+   846 ;;  thold           2    6[COMRAM] unsigned int 
+   847 ;; Return value:  Size  Location     Type
+   848 ;;                  1    wreg      char 
+   849 ;; Registers used:
+   850 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   851 ;; Tracked objects:
+   852 ;;		On entry : 0/0
+   853 ;;		On exit  : 0/0
+   854 ;;		Unchanged: 0/0
+   855 ;; Data sizes:     COMRAM   BANK0   BANK1
+   856 ;;      Params:         3       0       0
+   857 ;;      Locals:         2       0       0
+   858 ;;      Temps:          0       0       0
+   859 ;;      Totals:         5       0       0
+   860 ;;Total ram usage:        5 bytes
+   861 ;; Hardware stack levels used:    1
+   862 ;; Hardware stack levels required when called:    3
+   863 ;; This function calls:
+   864 ;;		_SWReadI2C
+   865 ;; This function is called by:
+   866 ;;		_readWord
+   867 ;; This function uses a non-reentrant model
+   868 ;;
+   869                           
+   870                           	psect	text5
+   871  000280                     __ptext5:
+   872                           	opt stack 0
+   873  000280                     _SWGetsI2C:
+   874                           	opt stack 24
+   875                           
+   876                           ;swi2c.c: 119: unsigned int thold;
+   877                           ;swi2c.c: 120: for (;length > 0; length--)
+   878                           
+   879                           ;incstack = 0
+   880  000280  5006               	movf	SWGetsI2C@length,w,c
+   881  000282  B4D8               	btfsc	status,2,c
+   882  000284  D030               	goto	u1250
+   883                           
+   884                           ;swi2c.c: 121: {
+   885                           ;swi2c.c: 123: thold = (unsigned int)SWReadI2C();
+   886  000286  EC1C  F002         	call	_SWReadI2C	;wreg free
+   887  00028A  C002  F007         	movff	?_SWReadI2C,SWGetsI2C@thold
+   888  00028E  C003  F008         	movff	?_SWReadI2C+1,SWGetsI2C@thold+1
+   889                           
+   890                           ;swi2c.c: 124: if ( thold & 0xFF00 )
+   891  000292  0EFF               	movlw	255
+   892  000294  1408               	andwf	SWGetsI2C@thold+1,w,c
+   893  000296  B4D8               	btfsc	status,2,c
+   894  000298  D002               	goto	l378
+   895                           
+   896                           ;swi2c.c: 125: {
+   897                           ;swi2c.c: 126: return ( -1 );
+   898  00029A  0EFF               	movlw	255
+   899  00029C  0012               	return	
+   900  00029E                     l378:
+   901                           
+   902                           ;swi2c.c: 128: else
+   903                           ;swi2c.c: 129: {
+   904                           ;swi2c.c: 130: *rdptr++ = thold;
+   905  00029E  C004  FFD9         	movff	SWGetsI2C@rdptr,fsr2l
+   906  0002A2  C005  FFDA         	movff	SWGetsI2C@rdptr+1,fsr2h
+   907  0002A6  C007  FFDF         	movff	SWGetsI2C@thold,indf2
+   908  0002AA  4A04               	infsnz	SWGetsI2C@rdptr,f,c
+   909  0002AC  2A05               	incf	SWGetsI2C@rdptr+1,f,c
+   910                           
+   911                           ;swi2c.c: 131: }
+   912                           ;swi2c.c: 133: if ( !length )
+   913  0002AE  5006               	movf	SWGetsI2C@length,w,c
+   914  0002B0  A4D8               	btfss	status,2,c
+   915  0002B2  D00B               	goto	l381
+   916                           
+   917                           ;swi2c.c: 134: {
+   918                           ;swi2c.c: 135: TRISCbits.TRISC0 = 0;;
+   919  0002B4  9094               	bcf	3988,0,c	;volatile
+   920                           
+   921                           ;swi2c.c: 136: TRISCbits.TRISC1 = 1;;
+   922  0002B6  8294               	bsf	3988,1,c	;volatile
+   923                           
+   924                           ;swi2c.c: 137: _delay(10);
+   925  0002B8  0E03               	movlw	3
+   926  0002BA                     u1547:
+   927  0002BA  2EE8               	decfsz	wreg,f,c
+   928  0002BC  D7FE               	bra	u1547
+   929  0002BE  F000               	nop	
+   930                           
+   931                           ;swi2c.c: 138: TRISCbits.TRISC0 = 1;;
+   932  0002C0  8094               	bsf	3988,0,c	;volatile
+   933                           
+   934                           ;swi2c.c: 139: _delay(10);
+   935  0002C2  0E03               	movlw	3
+   936  0002C4                     u1557:
+   937  0002C4  2EE8               	decfsz	wreg,f,c
+   938  0002C6  D7FE               	bra	u1557
+   939  0002C8  D00B               	goto	L1
+   940  0002CA                     l381:
+   941                           
+   942                           ;swi2c.c: 141: else
+   943                           ;swi2c.c: 142: {
+   944                           ;swi2c.c: 143: TRISCbits.TRISC0 = 0;;
+   945  0002CA  9094               	bcf	3988,0,c	;volatile
+   946                           
+   947                           ;swi2c.c: 144: LATCbits.LATC1 = 0;
+   948  0002CC  928B               	bcf	3979,1,c	;volatile
+   949                           
+   950                           ;swi2c.c: 145: TRISCbits.TRISC1 = 0;;
+   951  0002CE  9294               	bcf	3988,1,c	;volatile
+   952                           
+   953                           ;swi2c.c: 146: _delay(10);
+   954  0002D0  0E03               	movlw	3
+   955  0002D2                     u1567:
+   956  0002D2  2EE8               	decfsz	wreg,f,c
+   957  0002D4  D7FE               	bra	u1567
+   958  0002D6  F000               	nop	
+   959                           
+   960                           ;swi2c.c: 147: TRISCbits.TRISC0 = 1;;
+   961  0002D8  8094               	bsf	3988,0,c	;volatile
+   962                           
+   963                           ;swi2c.c: 148: _delay(10);
+   964  0002DA  0E03               	movlw	3
+   965  0002DC                     u1577:
+   966  0002DC  2EE8               	decfsz	wreg,f,c
+   967  0002DE  D7FE               	bra	u1577
+   968  0002E0                     L1:
+   969  0002E0  F000               	nop	
+   970  0002E2  0606               	decf	SWGetsI2C@length,f,c
+   971  0002E4  D7CD               	goto	_SWGetsI2C
+   972  0002E6                     u1250:
+   973                           
+   974                           ;swi2c.c: 149: }
+   975                           ;swi2c.c: 150: }
+   976                           ;swi2c.c: 151: return( 0 );
+   977  0002E6  0E00               	movlw	0
+   978  0002E8  0012               	return	
+   979  0002EA                     __end_of_SWGetsI2C:
+   980                           	opt stack 0
+   981                           tblptru	equ	0xFF8
+   982                           tblptrh	equ	0xFF7
+   983                           tblptrl	equ	0xFF6
+   984                           tablat	equ	0xFF5
+   985                           postinc0	equ	0xFEE
+   986                           wreg	equ	0xFE8
+   987                           indf2	equ	0xFDF
+   988                           fsr2h	equ	0xFDA
+   989                           fsr2l	equ	0xFD9
+   990                           status	equ	0xFD8
+   991                           
+   992 ;; *************** function _SWReadI2C *****************
+   993 ;; Defined at:
+   994 ;;		line 74 in file "src/swi2c.c"
+   995 ;; Parameters:    Size  Location     Type
+   996 ;;		None
+   997 ;; Auto vars:     Size  Location     Type
+   998 ;;		None
+   999 ;; Return value:  Size  Location     Type
+  1000 ;;                  2    1[COMRAM] int 
+  1001 ;; Registers used:
+  1002 ;;		wreg, status,2, status,0, cstack
+  1003 ;; Tracked objects:
+  1004 ;;		On entry : 0/0
+  1005 ;;		On exit  : 0/0
+  1006 ;;		Unchanged: 0/0
+  1007 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1008 ;;      Params:         2       0       0
+  1009 ;;      Locals:         0       0       0
+  1010 ;;      Temps:          0       0       0
+  1011 ;;      Totals:         2       0       0
+  1012 ;;Total ram usage:        2 bytes
+  1013 ;; Hardware stack levels used:    1
+  1014 ;; Hardware stack levels required when called:    2
+  1015 ;; This function calls:
+  1016 ;;		_Clock_test
+  1017 ;; This function is called by:
+  1018 ;;		_SWGetsI2C
+  1019 ;; This function uses a non-reentrant model
+  1020 ;;
+  1021                           
+  1022                           	psect	text6
+  1023  000438                     __ptext6:
+  1024                           	opt stack 0
+  1025  000438                     _SWReadI2C:
+  1026                           	opt stack 24
+  1027                           
+  1028                           ;swi2c.c: 76: BIT_COUNTER = 8;
+  1029                           
+  1030                           ;incstack = 0
+  1031  000438  0E08               	movlw	8
+  1032  00043A  6E20               	movwf	_BIT_COUNTER,c
+  1033                           
+  1034                           ;swi2c.c: 77: LATCbits.LATC0 = 0;
+  1035  00043C  908B               	bcf	3979,0,c	;volatile
+  1036  00043E                     
+  1037                           ;swi2c.c: 80: {
+  1038                           ;swi2c.c: 81: TRISCbits.TRISC0 = 0;;
+  1039  00043E  9094               	bcf	3988,0,c	;volatile
+  1040                           
+  1041                           ;swi2c.c: 82: TRISCbits.TRISC1 = 1;;
+  1042  000440  8294               	bsf	3988,1,c	;volatile
+  1043                           
+  1044                           ;swi2c.c: 83: _delay(10);
+  1045  000442  0E03               	movlw	3
+  1046  000444                     u1587:
+  1047  000444  2EE8               	decfsz	wreg,f,c
+  1048  000446  D7FE               	bra	u1587
+  1049  000448  F000               	nop	
+  1050                           
+  1051                           ;swi2c.c: 84: TRISCbits.TRISC0 = 1;;
+  1052  00044A  8094               	bsf	3988,0,c	;volatile
+  1053                           
+  1054                           ;swi2c.c: 85: _delay(1);
+  1055  00044C  F000               	nop	
+  1056                           
+  1057                           ;swi2c.c: 86: _delay(1);
+  1058  00044E  F000               	nop	
+  1059                           
+  1060                           ;swi2c.c: 88: if ( !PORTCbits.RC0 )
+  1061  000450  B082               	btfsc	3970,0,c	;volatile
+  1062  000452  D00A               	goto	l370
+  1063                           
+  1064                           ;swi2c.c: 89: {
+  1065                           ;swi2c.c: 90: if ( Clock_test( ) )
+  1066  000454  EC27  F003         	call	_Clock_test	;wreg free
+  1067  000458  0900               	iorlw	0
+  1068  00045A  B4D8               	btfsc	status,2,c
+  1069  00045C  D005               	goto	l370
+  1070                           
+  1071                           ;swi2c.c: 91: {
+  1072                           ;swi2c.c: 92: return ( -2 );
+  1073  00045E  0EFF               	movlw	255
+  1074  000460  6E03               	movwf	?_SWReadI2C+1,c
+  1075  000462  0EFE               	movlw	254
+  1076  000464  6E02               	movwf	?_SWReadI2C,c
+  1077  000466  0012               	return	
+  1078  000468                     l370:
+  1079                           
+  1080                           ;swi2c.c: 93: }
+  1081                           ;swi2c.c: 94: }
+  1082                           ;swi2c.c: 96: I2C_BUFFER <<= 1;
+  1083  000468  90D8               	bcf	status,0,c
+  1084  00046A  3621               	rlcf	_I2C_BUFFER,f,c
+  1085                           
+  1086                           ;swi2c.c: 97: I2C_BUFFER &= 0xFE;
+  1087  00046C  9021               	bcf	_I2C_BUFFER,0,c
+  1088                           
+  1089                           ;swi2c.c: 99: if ( PORTCbits.RC1 )
+  1090  00046E  B282               	btfsc	3970,1,c	;volatile
+  1091                           
+  1092                           ;swi2c.c: 100: I2C_BUFFER |= 0x01;
+  1093  000470  8021               	bsf	_I2C_BUFFER,0,c
+  1094                           
+  1095                           ;swi2c.c: 102: } while ( --BIT_COUNTER );
+  1096  000472  2E20               	decfsz	_BIT_COUNTER,f,c
+  1097  000474  D7E4               	goto	l368
+  1098                           
+  1099                           ;swi2c.c: 104: return ( (unsigned int) I2C_BUFFER );
+  1100  000476  C021  F002         	movff	_I2C_BUFFER,?_SWReadI2C
+  1101  00047A  6A03               	clrf	?_SWReadI2C+1,c
+  1102  00047C  0012               	return		;funcret
+  1103  00047E                     __end_of_SWReadI2C:
+  1104                           	opt stack 0
+  1105                           tblptru	equ	0xFF8
+  1106                           tblptrh	equ	0xFF7
+  1107                           tblptrl	equ	0xFF6
+  1108                           tablat	equ	0xFF5
+  1109                           postinc0	equ	0xFEE
+  1110                           wreg	equ	0xFE8
+  1111                           indf2	equ	0xFDF
+  1112                           fsr2h	equ	0xFDA
+  1113                           fsr2l	equ	0xFD9
+  1114                           status	equ	0xFD8
+  1115                           
+  1116 ;; *************** function _ChargingVoltage *****************
+  1117 ;; Defined at:
+  1118 ;;		line 169 in file "src/charger.c"
+  1119 ;; Parameters:    Size  Location     Type
+  1120 ;;  V0              2    4[COMRAM] unsigned int 
+  1121 ;; Auto vars:     Size  Location     Type
+  1122 ;;  err             1    7[COMRAM] enum E29
+  1123 ;;  err             1    6[COMRAM] enum E29
+  1124 ;; Return value:  Size  Location     Type
+  1125 ;;                  1    wreg      enum E29
+  1126 ;; Registers used:
+  1127 ;;		wreg, status,2, status,0, cstack
+  1128 ;; Tracked objects:
+  1129 ;;		On entry : 0/0
+  1130 ;;		On exit  : 0/0
+  1131 ;;		Unchanged: 0/0
+  1132 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1133 ;;      Params:         2       0       0
+  1134 ;;      Locals:         2       0       0
+  1135 ;;      Temps:          0       0       0
+  1136 ;;      Totals:         4       0       0
+  1137 ;;Total ram usage:        4 bytes
+  1138 ;; Hardware stack levels used:    1
+  1139 ;; Hardware stack levels required when called:    4
+  1140 ;; This function calls:
+  1141 ;;		_writeCommand
+  1142 ;;		_writeWord
+  1143 ;; This function is called by:
+  1144 ;;		_main
+  1145 ;; This function uses a non-reentrant model
+  1146 ;;
+  1147                           
+  1148                           	psect	text7
+  1149  00055C                     __ptext7:
+  1150                           	opt stack 0
+  1151  00055C                     _ChargingVoltage:
+  1152                           	opt stack 26
+  1153                           
+  1154                           ;charger.c: 171: { err_t err = writeCommand(CHARGING_VOLTAGE); if (err != ERR_OK) return
+      +                           err; };
+  1155                           
+  1156                           ;incstack = 0
+  1157  00055C  0E15               	movlw	21
+  1158  00055E  ECD1  F001         	call	_writeCommand
+  1159  000562  6E07               	movwf	ChargingVoltage@err,c
+  1160  000564  5007               	movf	ChargingVoltage@err,w,c
+  1161  000566  B4D8               	btfsc	status,2,c
+  1162  000568  D002               	goto	l290
+  1163  00056A  5007               	movf	ChargingVoltage@err,w,c
+  1164  00056C  0012               	return	
+  1165  00056E                     l290:
+  1166                           
+  1167                           ;charger.c: 172: { err_t err = writeWord(V0); if (err != ERR_OK) return err; };
+  1168  00056E  C005  F003         	movff	ChargingVoltage@V0,writeWord@buf
+  1169  000572  C006  F004         	movff	ChargingVoltage@V0+1,writeWord@buf+1
+  1170  000576  ECF8  F001         	call	_writeWord	;wreg free
+  1171  00057A  6E08               	movwf	ChargingVoltage@err_554,c
+  1172  00057C  5008               	movf	ChargingVoltage@err_554,w,c
+  1173  00057E  B4D8               	btfsc	status,2,c
+  1174  000580  D002               	goto	l292
+  1175  000582  5008               	movf	ChargingVoltage@err_554,w,c
+  1176  000584  0012               	return	
+  1177  000586                     l292:
+  1178                           
+  1179                           ;charger.c: 174: return ERR_OK;
+  1180  000586  0E00               	movlw	0
+  1181  000588  0012               	return	
+  1182  00058A                     __end_of_ChargingVoltage:
+  1183                           	opt stack 0
+  1184                           tblptru	equ	0xFF8
+  1185                           tblptrh	equ	0xFF7
+  1186                           tblptrl	equ	0xFF6
+  1187                           tablat	equ	0xFF5
+  1188                           postinc0	equ	0xFEE
+  1189                           wreg	equ	0xFE8
+  1190                           indf2	equ	0xFDF
+  1191                           fsr2h	equ	0xFDA
+  1192                           fsr2l	equ	0xFD9
+  1193                           status	equ	0xFD8
+  1194                           
+  1195 ;; *************** function _ChargingCurrent *****************
+  1196 ;; Defined at:
+  1197 ;;		line 161 in file "src/charger.c"
+  1198 ;; Parameters:    Size  Location     Type
+  1199 ;;  I0              2    4[COMRAM] unsigned int 
+  1200 ;; Auto vars:     Size  Location     Type
+  1201 ;;  err             1    7[COMRAM] enum E29
+  1202 ;;  err             1    6[COMRAM] enum E29
+  1203 ;; Return value:  Size  Location     Type
+  1204 ;;                  1    wreg      enum E29
+  1205 ;; Registers used:
+  1206 ;;		wreg, status,2, status,0, cstack
+  1207 ;; Tracked objects:
+  1208 ;;		On entry : 0/0
+  1209 ;;		On exit  : 0/0
+  1210 ;;		Unchanged: 0/0
+  1211 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1212 ;;      Params:         2       0       0
+  1213 ;;      Locals:         2       0       0
+  1214 ;;      Temps:          0       0       0
+  1215 ;;      Totals:         4       0       0
+  1216 ;;Total ram usage:        4 bytes
+  1217 ;; Hardware stack levels used:    1
+  1218 ;; Hardware stack levels required when called:    4
+  1219 ;; This function calls:
+  1220 ;;		_writeCommand
+  1221 ;;		_writeWord
+  1222 ;; This function is called by:
+  1223 ;;		_main
+  1224 ;; This function uses a non-reentrant model
+  1225 ;;
+  1226                           
+  1227                           	psect	text8
+  1228  00058A                     __ptext8:
+  1229                           	opt stack 0
+  1230  00058A                     _ChargingCurrent:
+  1231                           	opt stack 26
+  1232                           
+  1233                           ;charger.c: 163: { err_t err = writeCommand(CHARGING_CURRENT); if (err != ERR_OK) return
+      +                           err; };
+  1234                           
+  1235                           ;incstack = 0
+  1236  00058A  0E14               	movlw	20
+  1237  00058C  ECD1  F001         	call	_writeCommand
+  1238  000590  6E07               	movwf	ChargingCurrent@err,c
+  1239  000592  5007               	movf	ChargingCurrent@err,w,c
+  1240  000594  B4D8               	btfsc	status,2,c
+  1241  000596  D002               	goto	l285
+  1242  000598  5007               	movf	ChargingCurrent@err,w,c
+  1243  00059A  0012               	return	
+  1244  00059C                     l285:
+  1245                           
+  1246                           ;charger.c: 164: { err_t err = writeWord(I0); if (err != ERR_OK) return err; };
+  1247  00059C  C005  F003         	movff	ChargingCurrent@I0,writeWord@buf
+  1248  0005A0  C006  F004         	movff	ChargingCurrent@I0+1,writeWord@buf+1
+  1249  0005A4  ECF8  F001         	call	_writeWord	;wreg free
+  1250  0005A8  6E08               	movwf	ChargingCurrent@err_550,c
+  1251  0005AA  5008               	movf	ChargingCurrent@err_550,w,c
+  1252  0005AC  B4D8               	btfsc	status,2,c
+  1253  0005AE  D002               	goto	l287
+  1254  0005B0  5008               	movf	ChargingCurrent@err_550,w,c
+  1255  0005B2  0012               	return	
+  1256  0005B4                     l287:
+  1257                           
+  1258                           ;charger.c: 166: return ERR_OK;
+  1259  0005B4  0E00               	movlw	0
+  1260  0005B6  0012               	return	
+  1261  0005B8                     __end_of_ChargingCurrent:
+  1262                           	opt stack 0
+  1263                           tblptru	equ	0xFF8
+  1264                           tblptrh	equ	0xFF7
+  1265                           tblptrl	equ	0xFF6
+  1266                           tablat	equ	0xFF5
+  1267                           postinc0	equ	0xFEE
+  1268                           wreg	equ	0xFE8
+  1269                           indf2	equ	0xFDF
+  1270                           fsr2h	equ	0xFDA
+  1271                           fsr2l	equ	0xFD9
+  1272                           status	equ	0xFD8
+  1273                           
+  1274 ;; *************** function _ChargerReset *****************
+  1275 ;; Defined at:
+  1276 ;;		line 149 in file "src/charger.c"
+  1277 ;; Parameters:    Size  Location     Type
+  1278 ;;		None
+  1279 ;; Auto vars:     Size  Location     Type
+  1280 ;;  err             1    9[COMRAM] enum E29
+  1281 ;;  err             1    8[COMRAM] enum E29
+  1282 ;; Return value:  Size  Location     Type
+  1283 ;;                  1    wreg      enum E29
+  1284 ;; Registers used:
+  1285 ;;		wreg, status,2, status,0, cstack
+  1286 ;; Tracked objects:
+  1287 ;;		On entry : 0/0
+  1288 ;;		On exit  : 0/0
+  1289 ;;		Unchanged: 0/0
+  1290 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1291 ;;      Params:         0       0       0
+  1292 ;;      Locals:         2       0       0
+  1293 ;;      Temps:          0       0       0
+  1294 ;;      Totals:         2       0       0
+  1295 ;;Total ram usage:        2 bytes
+  1296 ;; Hardware stack levels used:    1
+  1297 ;; Hardware stack levels required when called:    5
+  1298 ;; This function calls:
+  1299 ;;		_ChargerMode
+  1300 ;; This function is called by:
+  1301 ;;		_main
+  1302 ;; This function uses a non-reentrant model
+  1303 ;;
+  1304                           
+  1305                           	psect	text9
+  1306  0004B8                     __ptext9:
+  1307                           	opt stack 0
+  1308  0004B8                     _ChargerReset:
+  1309                           	opt stack 25
+  1310                           
+  1311                           ;charger.c: 151: mode.bits.POR_RESET = 1;
+  1312                           
+  1313                           ;incstack = 0
+  1314  0004B8  8422               	bsf	_mode,2,c
+  1315                           
+  1316                           ;charger.c: 152: mode.bits.INHIBIT_CHARGE = 1;
+  1317  0004BA  8022               	bsf	_mode,0,c
+  1318                           
+  1319                           ;charger.c: 153: { err_t err = ChargerMode(mode); if (err != ERR_OK) return err; };
+  1320  0004BC  C022  F005         	movff	_mode,ChargerMode@chargerMode
+  1321  0004C0  C023  F006         	movff	_mode+1,ChargerMode@chargerMode+1
+  1322  0004C4  ECDC  F002         	call	_ChargerMode	;wreg free
+  1323  0004C8  6E09               	movwf	ChargerReset@err,c
+  1324  0004CA  5009               	movf	ChargerReset@err,w,c
+  1325  0004CC  B4D8               	btfsc	status,2,c
+  1326  0004CE  D002               	goto	l280
+  1327  0004D0  5009               	movf	ChargerReset@err,w,c
+  1328  0004D2  0012               	return	
+  1329  0004D4                     l280:
+  1330                           
+  1331                           ;charger.c: 155: mode.bits.INHIBIT_CHARGE = 0;
+  1332  0004D4  9022               	bcf	_mode,0,c
+  1333                           
+  1334                           ;charger.c: 156: { err_t err = ChargerMode(mode); if (err != ERR_OK) return err; };
+  1335  0004D6  C022  F005         	movff	_mode,ChargerMode@chargerMode
+  1336  0004DA  C023  F006         	movff	_mode+1,ChargerMode@chargerMode+1
+  1337  0004DE  ECDC  F002         	call	_ChargerMode	;wreg free
+  1338  0004E2  6E0A               	movwf	ChargerReset@err_546,c
+  1339  0004E4  500A               	movf	ChargerReset@err_546,w,c
+  1340  0004E6  B4D8               	btfsc	status,2,c
+  1341  0004E8  D002               	goto	l282
+  1342  0004EA  500A               	movf	ChargerReset@err_546,w,c
+  1343  0004EC  0012               	return	
+  1344  0004EE                     l282:
+  1345                           
+  1346                           ;charger.c: 158: return ERR_OK;
+  1347  0004EE  0E00               	movlw	0
+  1348  0004F0  0012               	return	
+  1349  0004F2                     __end_of_ChargerReset:
+  1350                           	opt stack 0
+  1351                           tblptru	equ	0xFF8
+  1352                           tblptrh	equ	0xFF7
+  1353                           tblptrl	equ	0xFF6
+  1354                           tablat	equ	0xFF5
+  1355                           postinc0	equ	0xFEE
+  1356                           wreg	equ	0xFE8
+  1357                           indf2	equ	0xFDF
+  1358                           fsr2h	equ	0xFDA
+  1359                           fsr2l	equ	0xFD9
+  1360                           status	equ	0xFD8
+  1361                           
+  1362 ;; *************** function _ChargerMode *****************
+  1363 ;; Defined at:
+  1364 ;;		line 141 in file "src/charger.c"
+  1365 ;; Parameters:    Size  Location     Type
+  1366 ;;  chargerMode     2    4[COMRAM] struct .
+  1367 ;; Auto vars:     Size  Location     Type
+  1368 ;;  err             1    7[COMRAM] enum E29
+  1369 ;;  err             1    6[COMRAM] enum E29
+  1370 ;; Return value:  Size  Location     Type
+  1371 ;;                  1    wreg      enum E29
+  1372 ;; Registers used:
+  1373 ;;		wreg, status,2, status,0, cstack
+  1374 ;; Tracked objects:
+  1375 ;;		On entry : 0/0
+  1376 ;;		On exit  : 0/0
+  1377 ;;		Unchanged: 0/0
+  1378 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1379 ;;      Params:         2       0       0
+  1380 ;;      Locals:         2       0       0
+  1381 ;;      Temps:          0       0       0
+  1382 ;;      Totals:         4       0       0
+  1383 ;;Total ram usage:        4 bytes
+  1384 ;; Hardware stack levels used:    1
+  1385 ;; Hardware stack levels required when called:    4
+  1386 ;; This function calls:
+  1387 ;;		_writeCommand
+  1388 ;;		_writeWord
+  1389 ;; This function is called by:
+  1390 ;;		_ChargerReset
+  1391 ;; This function uses a non-reentrant model
+  1392 ;;
+  1393                           
+  1394                           	psect	text10
+  1395  0005B8                     __ptext10:
+  1396                           	opt stack 0
+  1397  0005B8                     _ChargerMode:
+  1398                           	opt stack 25
+  1399                           
+  1400                           ;charger.c: 143: { err_t err = writeCommand(CHARGER_MODE); if (err != ERR_OK) return err
+      +                          ; };
+  1401                           
+  1402                           ;incstack = 0
+  1403  0005B8  0E12               	movlw	18
+  1404  0005BA  ECD1  F001         	call	_writeCommand
+  1405  0005BE  6E07               	movwf	ChargerMode@err,c
+  1406  0005C0  5007               	movf	ChargerMode@err,w,c
+  1407  0005C2  B4D8               	btfsc	status,2,c
+  1408  0005C4  D002               	goto	l275
+  1409  0005C6  5007               	movf	ChargerMode@err,w,c
+  1410  0005C8  0012               	return	
+  1411  0005CA                     l275:
+  1412                           
+  1413                           ;charger.c: 144: { err_t err = writeWord(chargerMode.word); if (err != ERR_OK) return er
+      +                          r; };
+  1414  0005CA  C005  F003         	movff	ChargerMode@chargerMode,writeWord@buf
+  1415  0005CE  C006  F004         	movff	ChargerMode@chargerMode+1,writeWord@buf+1
+  1416  0005D2  ECF8  F001         	call	_writeWord	;wreg free
+  1417  0005D6  6E08               	movwf	ChargerMode@err_530,c
+  1418  0005D8  5008               	movf	ChargerMode@err_530,w,c
+  1419  0005DA  B4D8               	btfsc	status,2,c
+  1420  0005DC  D002               	goto	l277
+  1421  0005DE  5008               	movf	ChargerMode@err_530,w,c
+  1422  0005E0  0012               	return	
+  1423  0005E2                     l277:
+  1424                           
+  1425                           ;charger.c: 146: return ERR_OK;
+  1426  0005E2  0E00               	movlw	0
+  1427  0005E4  0012               	return	
+  1428  0005E6                     __end_of_ChargerMode:
+  1429                           	opt stack 0
+  1430                           tblptru	equ	0xFF8
+  1431                           tblptrh	equ	0xFF7
+  1432                           tblptrl	equ	0xFF6
+  1433                           tablat	equ	0xFF5
+  1434                           postinc0	equ	0xFEE
+  1435                           wreg	equ	0xFE8
+  1436                           indf2	equ	0xFDF
+  1437                           fsr2h	equ	0xFDA
+  1438                           fsr2l	equ	0xFD9
+  1439                           status	equ	0xFD8
+  1440                           
+  1441 ;; *************** function _writeWord *****************
+  1442 ;; Defined at:
+  1443 ;;		line 103 in file "src/charger.c"
+  1444 ;; Parameters:    Size  Location     Type
+  1445 ;;  buf             2    2[COMRAM] unsigned int 
+  1446 ;; Auto vars:     Size  Location     Type
+  1447 ;;		None
+  1448 ;; Return value:  Size  Location     Type
+  1449 ;;                  1    wreg      enum E29
+  1450 ;; Registers used:
+  1451 ;;		wreg, status,2, status,0, cstack
+  1452 ;; Tracked objects:
+  1453 ;;		On entry : 0/0
+  1454 ;;		On exit  : 0/0
+  1455 ;;		Unchanged: 0/0
+  1456 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1457 ;;      Params:         2       0       0
+  1458 ;;      Locals:         0       0       0
+  1459 ;;      Temps:          0       0       0
+  1460 ;;      Totals:         2       0       0
+  1461 ;;Total ram usage:        2 bytes
+  1462 ;; Hardware stack levels used:    1
+  1463 ;; Hardware stack levels required when called:    3
+  1464 ;; This function calls:
+  1465 ;;		_SWAckI2C
+  1466 ;;		_SWStopI2C
+  1467 ;;		_SWWriteI2C
+  1468 ;; This function is called by:
+  1469 ;;		_ChargerMode
+  1470 ;;		_ChargingCurrent
+  1471 ;;		_ChargingVoltage
+  1472 ;; This function uses a non-reentrant model
+  1473 ;;
+  1474                           
+  1475                           	psect	text11
+  1476  0003F0                     __ptext11:
+  1477                           	opt stack 0
+  1478  0003F0                     _writeWord:
+  1479                           	opt stack 26
+  1480                           
+  1481                           ;charger.c: 106: if (SWWriteI2C((uint8_t)buf))
+  1482                           
+  1483                           ;incstack = 0
+  1484  0003F0  5003               	movf	writeWord@buf,w,c
+  1485  0003F2  EC0A  F001         	call	_SWWriteI2C
+  1486  0003F6  0900               	iorlw	0
+  1487  0003F8  B4D8               	btfsc	status,2,c
+  1488  0003FA  D002               	goto	l262
+  1489                           
+  1490                           ;charger.c: 107: return ERR_SWI2C_WRITE;
+  1491  0003FC  0E04               	movlw	4
+  1492  0003FE  0012               	return	
+  1493  000400                     l262:
+  1494                           
+  1495                           ;charger.c: 110: if (SWAckI2C() < 0)
+  1496  000400  EC17  F003         	call	_SWAckI2C	;wreg free
+  1497  000404  0A80               	xorlw	128
+  1498  000406  0F80               	addlw	-128
+  1499  000408  B0D8               	btfsc	status,0,c
+  1500  00040A  D002               	goto	l264
+  1501                           
+  1502                           ;charger.c: 111: return ERR_SWI2C_NOACK;
+  1503  00040C  0E05               	movlw	5
+  1504  00040E  0012               	return	
+  1505  000410                     l264:
+  1506                           
+  1507                           ;charger.c: 114: if (SWWriteI2C((uint8_t)(buf >> 8)))
+  1508  000410  5004               	movf	writeWord@buf+1,w,c
+  1509  000412  EC0A  F001         	call	_SWWriteI2C
+  1510  000416  0900               	iorlw	0
+  1511  000418  B4D8               	btfsc	status,2,c
+  1512  00041A  D002               	goto	l265
+  1513                           
+  1514                           ;charger.c: 115: return ERR_SWI2C_WRITE;
+  1515  00041C  0E04               	movlw	4
+  1516  00041E  0012               	return	
+  1517  000420                     l265:
+  1518                           
+  1519                           ;charger.c: 118: if (SWAckI2C() < 0)
+  1520  000420  EC17  F003         	call	_SWAckI2C	;wreg free
+  1521  000424  0A80               	xorlw	128
+  1522  000426  0F80               	addlw	-128
+  1523  000428  B0D8               	btfsc	status,0,c
+  1524  00042A  D002               	goto	l266
+  1525                           
+  1526                           ;charger.c: 119: return ERR_SWI2C_NOACK;
+  1527  00042C  0E05               	movlw	5
+  1528  00042E  0012               	return	
+  1529  000430                     l266:
+  1530                           
+  1531                           ;charger.c: 122: SWStopI2C();
+  1532  000430  EC06  F003         	call	_SWStopI2C	;wreg free
+  1533                           
+  1534                           ;charger.c: 124: return ERR_OK;
+  1535  000434  0E00               	movlw	0
+  1536  000436  0012               	return	
+  1537  000438                     __end_of_writeWord:
+  1538                           	opt stack 0
+  1539                           tblptru	equ	0xFF8
+  1540                           tblptrh	equ	0xFF7
+  1541                           tblptrl	equ	0xFF6
+  1542                           tablat	equ	0xFF5
+  1543                           postinc0	equ	0xFEE
+  1544                           wreg	equ	0xFE8
+  1545                           indf2	equ	0xFDF
+  1546                           fsr2h	equ	0xFDA
+  1547                           fsr2l	equ	0xFD9
+  1548                           status	equ	0xFD8
+  1549                           
+  1550 ;; *************** function _SWStopI2C *****************
+  1551 ;; Defined at:
+  1552 ;;		line 266 in file "src/swi2c.c"
+  1553 ;; Parameters:    Size  Location     Type
+  1554 ;;		None
+  1555 ;; Auto vars:     Size  Location     Type
+  1556 ;;		None
+  1557 ;; Return value:  Size  Location     Type
+  1558 ;;                  1    wreg      void 
+  1559 ;; Registers used:
+  1560 ;;		wreg
+  1561 ;; Tracked objects:
+  1562 ;;		On entry : 0/0
+  1563 ;;		On exit  : 0/0
+  1564 ;;		Unchanged: 0/0
+  1565 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1566 ;;      Params:         0       0       0
+  1567 ;;      Locals:         0       0       0
+  1568 ;;      Temps:          0       0       0
+  1569 ;;      Totals:         0       0       0
+  1570 ;;Total ram usage:        0 bytes
+  1571 ;; Hardware stack levels used:    1
+  1572 ;; This function calls:
+  1573 ;;		Nothing
+  1574 ;; This function is called by:
+  1575 ;;		_readWord
+  1576 ;;		_writeWord
+  1577 ;; This function uses a non-reentrant model
+  1578 ;;
+  1579                           
+  1580                           	psect	text12
+  1581  00060C                     __ptext12:
+  1582                           	opt stack 0
+  1583  00060C                     _SWStopI2C:
+  1584                           	opt stack 27
+  1585                           
+  1586                           ;swi2c.c: 268: LATCbits.LATC0 = 0;
+  1587                           
+  1588                           ;incstack = 0
+  1589  00060C  908B               	bcf	3979,0,c	;volatile
+  1590                           
+  1591                           ;swi2c.c: 269: TRISCbits.TRISC0 = 0;;
+  1592  00060E  9094               	bcf	3988,0,c	;volatile
+  1593                           
+  1594                           ;swi2c.c: 270: LATCbits.LATC1 = 0;
+  1595  000610  928B               	bcf	3979,1,c	;volatile
+  1596                           
+  1597                           ;swi2c.c: 271: TRISCbits.TRISC1 = 0;;
+  1598  000612  9294               	bcf	3988,1,c	;volatile
+  1599                           
+  1600                           ;swi2c.c: 272: _delay(10);
+  1601  000614  0E03               	movlw	3
+  1602  000616                     u1597:
+  1603  000616  2EE8               	decfsz	wreg,f,c
+  1604  000618  D7FE               	bra	u1597
+  1605  00061A  F000               	nop	
+  1606                           
+  1607                           ;swi2c.c: 273: TRISCbits.TRISC0 = 1;;
+  1608  00061C  8094               	bsf	3988,0,c	;volatile
+  1609                           
+  1610                           ;swi2c.c: 274: _delay(10);
+  1611  00061E  0E03               	movlw	3
+  1612  000620                     u1607:
+  1613  000620  2EE8               	decfsz	wreg,f,c
+  1614  000622  D7FE               	bra	u1607
+  1615  000624  F000               	nop	
+  1616                           
+  1617                           ;swi2c.c: 275: TRISCbits.TRISC1 = 1;;
+  1618  000626  8294               	bsf	3988,1,c	;volatile
+  1619                           
+  1620                           ;swi2c.c: 276: _delay(1);
+  1621  000628  F000               	nop	
+  1622                           
+  1623                           ;swi2c.c: 277: _delay(1);
+  1624  00062A  F000               	nop	
+  1625  00062C  0012               	return		;funcret
+  1626  00062E                     __end_of_SWStopI2C:
+  1627                           	opt stack 0
+  1628                           tblptru	equ	0xFF8
+  1629                           tblptrh	equ	0xFF7
+  1630                           tblptrl	equ	0xFF6
+  1631                           tablat	equ	0xFF5
+  1632                           postinc0	equ	0xFEE
+  1633                           wreg	equ	0xFE8
+  1634                           indf2	equ	0xFDF
+  1635                           fsr2h	equ	0xFDA
+  1636                           fsr2l	equ	0xFD9
+  1637                           status	equ	0xFD8
+  1638                           
+  1639 ;; *************** function _writeCommand *****************
+  1640 ;; Defined at:
+  1641 ;;		line 43 in file "src/charger.c"
+  1642 ;; Parameters:    Size  Location     Type
+  1643 ;;  cmd             1    wreg     enum E74
+  1644 ;; Auto vars:     Size  Location     Type
+  1645 ;;  cmd             1    2[COMRAM] enum E74
+  1646 ;; Return value:  Size  Location     Type
+  1647 ;;                  1    wreg      enum E29
+  1648 ;; Registers used:
+  1649 ;;		wreg, status,2, status,0, cstack
+  1650 ;; Tracked objects:
+  1651 ;;		On entry : 0/0
+  1652 ;;		On exit  : 0/0
+  1653 ;;		Unchanged: 0/0
+  1654 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1655 ;;      Params:         0       0       0
+  1656 ;;      Locals:         1       0       0
+  1657 ;;      Temps:          0       0       0
+  1658 ;;      Totals:         1       0       0
+  1659 ;;Total ram usage:        1 bytes
+  1660 ;; Hardware stack levels used:    1
+  1661 ;; Hardware stack levels required when called:    3
+  1662 ;; This function calls:
+  1663 ;;		_SWAckI2C
+  1664 ;;		_SWStartI2C
+  1665 ;;		_SWWriteI2C
+  1666 ;; This function is called by:
+  1667 ;;		_ChargerStatus
+  1668 ;;		_ChargerMode
+  1669 ;;		_ChargingCurrent
+  1670 ;;		_ChargingVoltage
+  1671 ;; This function uses a non-reentrant model
+  1672 ;;
+  1673                           
+  1674                           	psect	text13
+  1675  0003A2                     __ptext13:
+  1676                           	opt stack 0
+  1677  0003A2                     _writeCommand:
+  1678                           	opt stack 25
+  1679                           
+  1680                           ;incstack = 0
+  1681                           ;writeCommand@cmd stored from wreg
+  1682  0003A2  6E03               	movwf	writeCommand@cmd,c
+  1683                           
+  1684                           ;charger.c: 46: SWStartI2C();
+  1685  0003A4  EC38  F003         	call	_SWStartI2C	;wreg free
+  1686                           
+  1687                           ;charger.c: 49: if (SWWriteI2C((0x9 << 1) | WRITE) < 0)
+  1688  0003A8  0E12               	movlw	18
+  1689  0003AA  EC0A  F001         	call	_SWWriteI2C
+  1690  0003AE  0A80               	xorlw	128
+  1691  0003B0  0F80               	addlw	-128
+  1692  0003B2  B0D8               	btfsc	status,0,c
+  1693  0003B4  D002               	goto	l248
+  1694                           
+  1695                           ;charger.c: 50: return ERR_SWI2C_WRITE;
+  1696  0003B6  0E04               	movlw	4
+  1697  0003B8  0012               	return	
+  1698  0003BA                     l248:
+  1699                           
+  1700                           ;charger.c: 53: if (SWAckI2C() < 0)
+  1701  0003BA  EC17  F003         	call	_SWAckI2C	;wreg free
+  1702  0003BE  0A80               	xorlw	128
+  1703  0003C0  0F80               	addlw	-128
+  1704  0003C2  B0D8               	btfsc	status,0,c
+  1705  0003C4  D002               	goto	l250
+  1706                           
+  1707                           ;charger.c: 54: return ERR_SWI2C_NOACK;
+  1708  0003C6  0E05               	movlw	5
+  1709  0003C8  0012               	return	
+  1710  0003CA                     l250:
+  1711                           
+  1712                           ;charger.c: 57: if (SWWriteI2C((uint8_t)cmd) < 0)
+  1713  0003CA  5003               	movf	writeCommand@cmd,w,c
+  1714  0003CC  EC0A  F001         	call	_SWWriteI2C
+  1715  0003D0  0A80               	xorlw	128
+  1716  0003D2  0F80               	addlw	-128
+  1717  0003D4  B0D8               	btfsc	status,0,c
+  1718  0003D6  D002               	goto	l251
+  1719                           
+  1720                           ;charger.c: 58: return ERR_SWI2C_WRITE;
+  1721  0003D8  0E04               	movlw	4
+  1722  0003DA  0012               	return	
+  1723  0003DC                     l251:
+  1724                           
+  1725                           ;charger.c: 61: if (SWAckI2C() < 0)
+  1726  0003DC  EC17  F003         	call	_SWAckI2C	;wreg free
+  1727  0003E0  0A80               	xorlw	128
+  1728  0003E2  0F80               	addlw	-128
+  1729  0003E4  B0D8               	btfsc	status,0,c
+  1730  0003E6  D002               	goto	l252
+  1731                           
+  1732                           ;charger.c: 62: return ERR_SWI2C_NOACK;
+  1733  0003E8  0E05               	movlw	5
+  1734  0003EA  0012               	return	
+  1735  0003EC                     l252:
+  1736                           
+  1737                           ;charger.c: 64: return ERR_OK;
+  1738  0003EC  0E00               	movlw	0
+  1739  0003EE  0012               	return	
+  1740  0003F0                     __end_of_writeCommand:
+  1741                           	opt stack 0
+  1742                           tblptru	equ	0xFF8
+  1743                           tblptrh	equ	0xFF7
+  1744                           tblptrl	equ	0xFF6
+  1745                           tablat	equ	0xFF5
+  1746                           postinc0	equ	0xFEE
+  1747                           wreg	equ	0xFE8
+  1748                           indf2	equ	0xFDF
+  1749                           fsr2h	equ	0xFDA
+  1750                           fsr2l	equ	0xFD9
+  1751                           status	equ	0xFD8
+  1752                           
+  1753 ;; *************** function _SWWriteI2C *****************
+  1754 ;; Defined at:
+  1755 ;;		line 161 in file "src/swi2c.c"
+  1756 ;; Parameters:    Size  Location     Type
+  1757 ;;  data_out        1    wreg     unsigned char 
+  1758 ;; Auto vars:     Size  Location     Type
+  1759 ;;  data_out        1    1[COMRAM] unsigned char 
+  1760 ;; Return value:  Size  Location     Type
+  1761 ;;                  1    wreg      char 
+  1762 ;; Registers used:
+  1763 ;;		wreg, status,2, status,0, cstack
+  1764 ;; Tracked objects:
+  1765 ;;		On entry : 0/0
+  1766 ;;		On exit  : 0/0
+  1767 ;;		Unchanged: 0/0
+  1768 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1769 ;;      Params:         0       0       0
+  1770 ;;      Locals:         1       0       0
+  1771 ;;      Temps:          0       0       0
+  1772 ;;      Totals:         1       0       0
+  1773 ;;Total ram usage:        1 bytes
+  1774 ;; Hardware stack levels used:    1
+  1775 ;; Hardware stack levels required when called:    2
+  1776 ;; This function calls:
+  1777 ;;		_Clock_test
+  1778 ;; This function is called by:
+  1779 ;;		_writeCommand
+  1780 ;;		_readWord
+  1781 ;;		_writeWord
+  1782 ;;		_SWPutsI2C
+  1783 ;; This function uses a non-reentrant model
+  1784 ;;
+  1785                           
+  1786                           	psect	text14
+  1787  000214                     __ptext14:
+  1788                           	opt stack 0
+  1789  000214                     _SWWriteI2C:
+  1790                           	opt stack 25
+  1791                           
+  1792                           ;incstack = 0
+  1793                           ;SWWriteI2C@data_out stored from wreg
+  1794  000214  6E02               	movwf	SWWriteI2C@data_out,c
+  1795                           
+  1796                           ;swi2c.c: 163: BIT_COUNTER = 8;
+  1797  000216  0E08               	movlw	8
+  1798  000218  6E20               	movwf	_BIT_COUNTER,c
+  1799                           
+  1800                           ;swi2c.c: 164: I2C_BUFFER = data_out;
+  1801  00021A  C002  F021         	movff	SWWriteI2C@data_out,_I2C_BUFFER
+  1802                           
+  1803                           ;swi2c.c: 165: LATCbits.LATC0 = 0;
+  1804  00021E  908B               	bcf	3979,0,c	;volatile
+  1805  000220                     
+  1806                           ;swi2c.c: 168: {
+  1807                           ;swi2c.c: 169: if ( !PORTCbits.RC0 )
+  1808  000220  B082               	btfsc	3970,0,c	;volatile
+  1809  000222  D007               	goto	l386
+  1810                           
+  1811                           ;swi2c.c: 170: {
+  1812                           ;swi2c.c: 171: if ( Clock_test( ) )
+  1813  000224  EC27  F003         	call	_Clock_test	;wreg free
+  1814  000228  0900               	iorlw	0
+  1815  00022A  B4D8               	btfsc	status,2,c
+  1816  00022C  D024               	goto	l389
+  1817                           
+  1818                           ;swi2c.c: 172: {
+  1819                           ;swi2c.c: 173: return ( -1 );
+  1820  00022E  0EFF               	movlw	255
+  1821  000230  0012               	return	
+  1822  000232                     l386:
+  1823                           
+  1824                           ;swi2c.c: 177: else
+  1825                           ;swi2c.c: 178: {
+  1826                           ;swi2c.c: 185: if (STATUSbits.C == 1)
+  1827  000232  A0D8               	btfss	status,0,c	;volatile
+  1828  000234  D003               	goto	l390
+  1829                           
+  1830                           ;swi2c.c: 186: I2C_BUFFER = (unsigned char)((I2C_BUFFER << 1) | 0x1);
+  1831  000236  80D8               	bsf	status,0,c
+  1832  000238  3621               	rlcf	_I2C_BUFFER,f,c
+  1833  00023A  D003               	goto	l391
+  1834  00023C                     l390:
+  1835                           
+  1836                           ;swi2c.c: 187: else
+  1837                           ;swi2c.c: 188: I2C_BUFFER = (unsigned char)(I2C_BUFFER << 1);
+  1838  00023C  5021               	movf	_I2C_BUFFER,w,c
+  1839  00023E  2421               	addwf	_I2C_BUFFER,w,c
+  1840  000240  6E21               	movwf	_I2C_BUFFER,c
+  1841  000242                     l391:
+  1842                           
+  1843                           ;swi2c.c: 191: if ( STATUS & 0x01 )
+  1844  000242  A0D8               	btfss	status,0,c	;volatile
+  1845  000244  D00B               	goto	l392
+  1846                           
+  1847                           ;swi2c.c: 192: {
+  1848                           ;swi2c.c: 193: TRISCbits.TRISC0 = 0;;
+  1849  000246  9094               	bcf	3988,0,c	;volatile
+  1850                           
+  1851                           ;swi2c.c: 194: TRISCbits.TRISC1 = 1;;
+  1852  000248  8294               	bsf	3988,1,c	;volatile
+  1853                           
+  1854                           ;swi2c.c: 195: _delay(10);
+  1855  00024A  0E03               	movlw	3
+  1856  00024C                     u1617:
+  1857  00024C  2EE8               	decfsz	wreg,f,c
+  1858  00024E  D7FE               	bra	u1617
+  1859  000250  F000               	nop	
+  1860                           
+  1861                           ;swi2c.c: 196: TRISCbits.TRISC0 = 1;;
+  1862  000252  8094               	bsf	3988,0,c	;volatile
+  1863                           
+  1864                           ;swi2c.c: 197: _delay(10);
+  1865  000254  0E03               	movlw	3
+  1866  000256                     u1627:
+  1867  000256  2EE8               	decfsz	wreg,f,c
+  1868  000258  D7FE               	bra	u1627
+  1869  00025A  D00B               	goto	L2
+  1870  00025C                     l392:
+  1871                           
+  1872                           ;swi2c.c: 199: else
+  1873                           ;swi2c.c: 200: {
+  1874                           ;swi2c.c: 201: TRISCbits.TRISC0 = 0;;
+  1875  00025C  9094               	bcf	3988,0,c	;volatile
+  1876                           
+  1877                           ;swi2c.c: 202: LATCbits.LATC1 = 0;
+  1878  00025E  928B               	bcf	3979,1,c	;volatile
+  1879                           
+  1880                           ;swi2c.c: 203: TRISCbits.TRISC1 = 0;;
+  1881  000260  9294               	bcf	3988,1,c	;volatile
+  1882                           
+  1883                           ;swi2c.c: 204: _delay(10);
+  1884  000262  0E03               	movlw	3
+  1885  000264                     u1637:
+  1886  000264  2EE8               	decfsz	wreg,f,c
+  1887  000266  D7FE               	bra	u1637
+  1888  000268  F000               	nop	
+  1889                           
+  1890                           ;swi2c.c: 205: TRISCbits.TRISC0 = 1;;
+  1891  00026A  8094               	bsf	3988,0,c	;volatile
+  1892                           
+  1893                           ;swi2c.c: 206: _delay(10);
+  1894  00026C  0E03               	movlw	3
+  1895  00026E                     u1647:
+  1896  00026E  2EE8               	decfsz	wreg,f,c
+  1897  000270  D7FE               	bra	u1647
+  1898  000272                     L2:
+  1899  000272  F000               	nop	
+  1900                           
+  1901                           ;swi2c.c: 207: }
+  1902                           ;swi2c.c: 209: BIT_COUNTER --;
+  1903  000274  0620               	decf	_BIT_COUNTER,f,c
+  1904  000276                     l389:
+  1905                           
+  1906                           ;swi2c.c: 210: }
+  1907                           ;swi2c.c: 211: } while ( BIT_COUNTER );
+  1908  000276  5020               	movf	_BIT_COUNTER,w,c
+  1909  000278  A4D8               	btfss	status,2,c
+  1910  00027A  D7D2               	goto	l385
+  1911                           
+  1912                           ;swi2c.c: 213: return ( 0 );
+  1913  00027C  0E00               	movlw	0
+  1914  00027E  0012               	return	
+  1915  000280                     __end_of_SWWriteI2C:
+  1916                           	opt stack 0
+  1917                           tblptru	equ	0xFF8
+  1918                           tblptrh	equ	0xFF7
+  1919                           tblptrl	equ	0xFF6
+  1920                           tablat	equ	0xFF5
+  1921                           postinc0	equ	0xFEE
+  1922                           wreg	equ	0xFE8
+  1923                           indf2	equ	0xFDF
+  1924                           fsr2h	equ	0xFDA
+  1925                           fsr2l	equ	0xFD9
+  1926                           status	equ	0xFD8
+  1927                           
+  1928 ;; *************** function _Clock_test *****************
+  1929 ;; Defined at:
+  1930 ;;		line 51 in file "src/swi2c.c"
+  1931 ;; Parameters:    Size  Location     Type
+  1932 ;;		None
+  1933 ;; Auto vars:     Size  Location     Type
+  1934 ;;		None
+  1935 ;; Return value:  Size  Location     Type
+  1936 ;;                  1    wreg      char 
+  1937 ;; Registers used:
+  1938 ;;		wreg, cstack
+  1939 ;; Tracked objects:
+  1940 ;;		On entry : 0/0
+  1941 ;;		On exit  : 0/0
+  1942 ;;		Unchanged: 0/0
+  1943 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1944 ;;      Params:         0       0       0
+  1945 ;;      Locals:         0       0       0
+  1946 ;;      Temps:          0       0       0
+  1947 ;;      Totals:         0       0       0
+  1948 ;;Total ram usage:        0 bytes
+  1949 ;; Hardware stack levels used:    1
+  1950 ;; Hardware stack levels required when called:    1
+  1951 ;; This function calls:
+  1952 ;;		_Delay10TCYx
+  1953 ;; This function is called by:
+  1954 ;;		_SWReadI2C
+  1955 ;;		_SWWriteI2C
+  1956 ;; This function uses a non-reentrant model
+  1957 ;;
+  1958                           
+  1959                           	psect	text15
+  1960  00064E                     __ptext15:
+  1961                           	opt stack 0
+  1962  00064E                     _Clock_test:
+  1963                           	opt stack 25
+  1964                           
+  1965                           ;swi2c.c: 53: Delay10TCYx(3);
+  1966                           
+  1967                           ;incstack = 0
+  1968  00064E  0E03               	movlw	3
+  1969  000650  EC30  F003         	call	_Delay10TCYx
+  1970                           
+  1971                           ;swi2c.c: 55: if ( !PORTCbits.RC0 )
+  1972  000654  B082               	btfsc	3970,0,c	;volatile
+  1973  000656  D002               	goto	l359
+  1974                           
+  1975                           ;swi2c.c: 56: {
+  1976                           ;swi2c.c: 57: return ( -2 );
+  1977  000658  0EFE               	movlw	254
+  1978                           
+  1979                           ;swi2c.c: 58: }
+  1980  00065A  0012               	return	
+  1981  00065C                     l359:
+  1982                           
+  1983                           ;swi2c.c: 59: else
+  1984                           ;swi2c.c: 60: {
+  1985                           ;swi2c.c: 61: return ( 0 );
+  1986  00065C  0E00               	movlw	0
+  1987  00065E  0012               	return	
+  1988  000660                     __end_of_Clock_test:
+  1989                           	opt stack 0
+  1990                           tblptru	equ	0xFF8
+  1991                           tblptrh	equ	0xFF7
+  1992                           tblptrl	equ	0xFF6
+  1993                           tablat	equ	0xFF5
+  1994                           postinc0	equ	0xFEE
+  1995                           wreg	equ	0xFE8
+  1996                           indf2	equ	0xFDF
+  1997                           fsr2h	equ	0xFDA
+  1998                           fsr2l	equ	0xFD9
+  1999                           status	equ	0xFD8
+  2000                           
+  2001 ;; *************** function _Delay10TCYx *****************
+  2002 ;; Defined at:
+  2003 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic18\d10tcyx.c"
+  2004 ;; Parameters:    Size  Location     Type
+  2005 ;;  unit            1    wreg     unsigned char 
+  2006 ;; Auto vars:     Size  Location     Type
+  2007 ;;  unit            1    0[COMRAM] unsigned char 
+  2008 ;; Return value:  Size  Location     Type
+  2009 ;;                  1    wreg      void 
+  2010 ;; Registers used:
+  2011 ;;		wreg
+  2012 ;; Tracked objects:
+  2013 ;;		On entry : 0/0
+  2014 ;;		On exit  : 0/0
+  2015 ;;		Unchanged: 0/0
+  2016 ;; Data sizes:     COMRAM   BANK0   BANK1
+  2017 ;;      Params:         0       0       0
+  2018 ;;      Locals:         1       0       0
+  2019 ;;      Temps:          0       0       0
+  2020 ;;      Totals:         1       0       0
+  2021 ;;Total ram usage:        1 bytes
+  2022 ;; Hardware stack levels used:    1
+  2023 ;; This function calls:
+  2024 ;;		Nothing
+  2025 ;; This function is called by:
+  2026 ;;		_Clock_test
+  2027 ;; This function uses a non-reentrant model
+  2028 ;;
+  2029                           
+  2030                           	psect	text16
+  2031  000660                     __ptext16:
+  2032                           	opt stack 0
+  2033  000660                     _Delay10TCYx:
+  2034                           	opt stack 25
+  2035                           
+  2036                           ;incstack = 0
+  2037                           ;Delay10TCYx@unit stored from wreg
+  2038  000660  6E01               	movwf	Delay10TCYx@unit,c
+  2039  000662                     l614:
+  2040  000662  0E03               	movlw	3
+  2041  000664                     u1657:
+  2042  000664  2EE8               	decfsz	wreg,f,c
+  2043  000666  D7FE               	bra	u1657
+  2044  000668  F000               	nop	
+  2045  00066A  2E01               	decfsz	Delay10TCYx@unit,f,c
+  2046  00066C  D7FA               	goto	l614
+  2047  00066E  0012               	return	
+  2048  000670                     __end_of_Delay10TCYx:
+  2049                           	opt stack 0
+  2050                           tblptru	equ	0xFF8
+  2051                           tblptrh	equ	0xFF7
+  2052                           tblptrl	equ	0xFF6
+  2053                           tablat	equ	0xFF5
+  2054                           postinc0	equ	0xFEE
+  2055                           wreg	equ	0xFE8
+  2056                           indf2	equ	0xFDF
+  2057                           fsr2h	equ	0xFDA
+  2058                           fsr2l	equ	0xFD9
+  2059                           status	equ	0xFD8
+  2060                           
+  2061 ;; *************** function _SWStartI2C *****************
+  2062 ;; Defined at:
+  2063 ;;		line 286 in file "src/swi2c.c"
+  2064 ;; Parameters:    Size  Location     Type
+  2065 ;;		None
+  2066 ;; Auto vars:     Size  Location     Type
+  2067 ;;		None
+  2068 ;; Return value:  Size  Location     Type
+  2069 ;;                  1    wreg      void 
+  2070 ;; Registers used:
+  2071 ;;		wreg
+  2072 ;; Tracked objects:
+  2073 ;;		On entry : 0/0
+  2074 ;;		On exit  : 0/0
+  2075 ;;		Unchanged: 0/0
+  2076 ;; Data sizes:     COMRAM   BANK0   BANK1
+  2077 ;;      Params:         0       0       0
+  2078 ;;      Locals:         0       0       0
+  2079 ;;      Temps:          0       0       0
+  2080 ;;      Totals:         0       0       0
+  2081 ;;Total ram usage:        0 bytes
+  2082 ;; Hardware stack levels used:    1
+  2083 ;; This function calls:
+  2084 ;;		Nothing
+  2085 ;; This function is called by:
+  2086 ;;		_writeCommand
+  2087 ;; This function uses a non-reentrant model
+  2088 ;;
+  2089                           
+  2090                           	psect	text17
+  2091  000670                     __ptext17:
+  2092                           	opt stack 0
+  2093  000670                     _SWStartI2C:
+  2094                           	opt stack 27
+  2095                           
+  2096                           ;swi2c.c: 288: LATCbits.LATC1 = 0;
+  2097                           
+  2098                           ;incstack = 0
+  2099  000670  928B               	bcf	3979,1,c	;volatile
+  2100                           
+  2101                           ;swi2c.c: 289: TRISCbits.TRISC1 = 0;;
+  2102  000672  9294               	bcf	3988,1,c	;volatile
+  2103                           
+  2104                           ;swi2c.c: 290: _delay(10);
+  2105  000674  0E03               	movlw	3
+  2106  000676                     u1667:
+  2107  000676  2EE8               	decfsz	wreg,f,c
+  2108  000678  D7FE               	bra	u1667
+  2109  00067A  F000               	nop	
+  2110  00067C  0012               	return		;funcret
+  2111  00067E                     __end_of_SWStartI2C:
+  2112                           	opt stack 0
+  2113                           tblptru	equ	0xFF8
+  2114                           tblptrh	equ	0xFF7
+  2115                           tblptrl	equ	0xFF6
+  2116                           tablat	equ	0xFF5
+  2117                           postinc0	equ	0xFEE
+  2118                           wreg	equ	0xFE8
+  2119                           indf2	equ	0xFDF
+  2120                           fsr2h	equ	0xFDA
+  2121                           fsr2l	equ	0xFD9
+  2122                           status	equ	0xFD8
+  2123                           
+  2124 ;; *************** function _SWAckI2C *****************
+  2125 ;; Defined at:
+  2126 ;;		line 13 in file "src/swi2c.c"
+  2127 ;; Parameters:    Size  Location     Type
+  2128 ;;		None
+  2129 ;; Auto vars:     Size  Location     Type
+  2130 ;;		None
+  2131 ;; Return value:  Size  Location     Type
+  2132 ;;                  1    wreg      char 
+  2133 ;; Registers used:
+  2134 ;;		wreg
+  2135 ;; Tracked objects:
+  2136 ;;		On entry : 0/0
+  2137 ;;		On exit  : 0/0
+  2138 ;;		Unchanged: 0/0
+  2139 ;; Data sizes:     COMRAM   BANK0   BANK1
+  2140 ;;      Params:         0       0       0
+  2141 ;;      Locals:         0       0       0
+  2142 ;;      Temps:          0       0       0
+  2143 ;;      Totals:         0       0       0
+  2144 ;;Total ram usage:        0 bytes
+  2145 ;; Hardware stack levels used:    1
+  2146 ;; This function calls:
+  2147 ;;		Nothing
+  2148 ;; This function is called by:
+  2149 ;;		_writeCommand
+  2150 ;;		_readWord
+  2151 ;;		_writeWord
+  2152 ;;		_SWPutsI2C
+  2153 ;; This function uses a non-reentrant model
+  2154 ;;
+  2155                           
+  2156                           	psect	text18
+  2157  00062E                     __ptext18:
+  2158                           	opt stack 0
+  2159  00062E                     _SWAckI2C:
+  2160                           	opt stack 27
+  2161                           
+  2162                           ;swi2c.c: 15: LATCbits.LATC0 = 0;
+  2163                           
+  2164                           ;incstack = 0
+  2165  00062E  908B               	bcf	3979,0,c	;volatile
+  2166                           
+  2167                           ;swi2c.c: 16: TRISCbits.TRISC0 = 0;;
+  2168  000630  9094               	bcf	3988,0,c	;volatile
+  2169                           
+  2170                           ;swi2c.c: 17: TRISCbits.TRISC1 = 1;;
+  2171  000632  8294               	bsf	3988,1,c	;volatile
+  2172                           
+  2173                           ;swi2c.c: 18: _delay(10);
+  2174  000634  0E03               	movlw	3
+  2175  000636                     u1677:
+  2176  000636  2EE8               	decfsz	wreg,f,c
+  2177  000638  D7FE               	bra	u1677
+  2178  00063A  F000               	nop	
+  2179                           
+  2180                           ;swi2c.c: 19: TRISCbits.TRISC0 = 1;;
+  2181  00063C  8094               	bsf	3988,0,c	;volatile
+  2182                           
+  2183                           ;swi2c.c: 20: _delay(1);
+  2184  00063E  F000               	nop	
+  2185                           
+  2186                           ;swi2c.c: 21: _delay(1);
+  2187  000640  F000               	nop	
+  2188                           
+  2189                           ;swi2c.c: 23: if ( PORTCbits.RC1 )
+  2190  000642  A282               	btfss	3970,1,c	;volatile
+  2191  000644  D002               	goto	l351
+  2192                           
+  2193                           ;swi2c.c: 24: {
+  2194                           ;swi2c.c: 25: return ( -1 );
+  2195  000646  0EFF               	movlw	255
+  2196                           
+  2197                           ;swi2c.c: 26: }
+  2198  000648  0012               	return	
+  2199  00064A                     l351:
+  2200                           
+  2201                           ;swi2c.c: 27: else
+  2202                           ;swi2c.c: 28: {
+  2203                           ;swi2c.c: 29: return ( 0 );
+  2204  00064A  0E00               	movlw	0
+  2205  00064C  0012               	return	
+  2206  00064E                     __end_of_SWAckI2C:
+  2207                           	opt stack 0
+  2208                           tblptru	equ	0xFF8
+  2209                           tblptrh	equ	0xFF7
+  2210                           tblptrl	equ	0xFF6
+  2211                           tablat	equ	0xFF5
+  2212                           postinc0	equ	0xFEE
+  2213                           wreg	equ	0xFE8
+  2214                           indf2	equ	0xFDF
+  2215                           fsr2h	equ	0xFDA
+  2216                           fsr2l	equ	0xFD9
+  2217                           status	equ	0xFD8
+  2218                           tblptru	equ	0xFF8
+  2219                           tblptrh	equ	0xFF7
+  2220                           tblptrl	equ	0xFF6
+  2221                           tablat	equ	0xFF5
+  2222                           postinc0	equ	0xFEE
+  2223                           wreg	equ	0xFE8
+  2224                           indf2	equ	0xFDF
+  2225                           fsr2h	equ	0xFDA
+  2226                           fsr2l	equ	0xFD9
+  2227                           status	equ	0xFD8
+  2228                           
+  2229                           	psect	rparam
+  2230  0000                     tblptru	equ	0xFF8
+  2231                           tblptrh	equ	0xFF7
+  2232                           tblptrl	equ	0xFF6
+  2233                           tablat	equ	0xFF5
+  2234                           postinc0	equ	0xFEE
+  2235                           wreg	equ	0xFE8
+  2236                           indf2	equ	0xFDF
+  2237                           fsr2h	equ	0xFDA
+  2238                           fsr2l	equ	0xFD9
+  2239                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    18
+    Data        2
+    BSS         12
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     21      35
+    BANK0           160      0       0
+    BANK1           256      0       0
+
+Pointer List with Targets:
+
+    SWGetsI2C@rdptr	PTR unsigned char  size(2) Largest target is 2
+		 -> IsChargerStatusChange@tmp(COMRAM[2]), 
+
+    ChargerStatus@pStatus	PTR struct . size(2) Largest target is 2
+		 -> IsChargerStatusChange@tmp(COMRAM[2]), 
+
+    readWord@pBuf	PTR unsigned int  size(2) Largest target is 2
+		 -> IsChargerStatusChange@tmp(COMRAM[2]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_IsChargerStatusChange
+    _IsChargerStatusChange->_ChargerStatus
+    _ChargerStatus->_readWord
+    _readWord->_SWGetsI2C
+    _SWGetsI2C->_SWReadI2C
+    _ChargingVoltage->_writeWord
+    _ChargingCurrent->_writeWord
+    _ChargerReset->_ChargerMode
+    _ChargerMode->_writeWord
+    _writeWord->_SWWriteI2C
+    _writeCommand->_SWWriteI2C
+    _Clock_test->_Delay10TCYx
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0    2617
+                                             20 COMRAM     1     1      0
+                       _ChargerReset
+                    _ChargingCurrent
+                    _ChargingVoltage
+              _IsChargerStatusChange
+ ---------------------------------------------------------------------------------
+ (1) _IsChargerStatusChange                                6     6      0     843
+                                             14 COMRAM     6     6      0
+                      _ChargerStatus
+ ---------------------------------------------------------------------------------
+ (2) _ChargerStatus                                        4     2      2     707
+                                             10 COMRAM     4     2      2
+                           _readWord
+                       _writeCommand
+ ---------------------------------------------------------------------------------
+ (3) _readWord                                             2     0      2     452
+                                              8 COMRAM     2     0      2
+                           _SWAckI2C
+                          _SWGetsI2C
+                       _SWRestartI2C
+                          _SWStopI2C
+                         _SWWriteI2C
+ ---------------------------------------------------------------------------------
+ (4) _SWRestartI2C                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _SWGetsI2C                                            5     2      3     302
+                                              3 COMRAM     5     2      3
+                          _SWReadI2C
+ ---------------------------------------------------------------------------------
+ (5) _SWReadI2C                                            2     0      2      15
+                                              1 COMRAM     2     0      2
+                         _Clock_test
+ ---------------------------------------------------------------------------------
+ (1) _ChargingVoltage                                      4     2      2     535
+                                              4 COMRAM     4     2      2
+                       _writeCommand
+                          _writeWord
+ ---------------------------------------------------------------------------------
+ (1) _ChargingCurrent                                      4     2      2     535
+                                              4 COMRAM     4     2      2
+                       _writeCommand
+                          _writeWord
+ ---------------------------------------------------------------------------------
+ (1) _ChargerReset                                         2     2      0     701
+                                              8 COMRAM     2     2      0
+                        _ChargerMode
+ ---------------------------------------------------------------------------------
+ (2) _ChargerMode                                          4     2      2     611
+                                              4 COMRAM     4     2      2
+                       _writeCommand
+                          _writeWord
+ ---------------------------------------------------------------------------------
+ (2) _writeWord                                            2     0      2     302
+                                              2 COMRAM     2     0      2
+                           _SWAckI2C
+                          _SWStopI2C
+                         _SWWriteI2C
+ ---------------------------------------------------------------------------------
+ (4) _SWStopI2C                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _writeCommand                                         1     1      0      45
+                                              2 COMRAM     1     1      0
+                           _SWAckI2C
+                         _SWStartI2C
+                         _SWWriteI2C
+ ---------------------------------------------------------------------------------
+ (4) _SWWriteI2C                                           1     1      0      30
+                                              1 COMRAM     1     1      0
+                         _Clock_test
+ ---------------------------------------------------------------------------------
+ (5) _Clock_test                                           0     0      0      15
+                        _Delay10TCYx
+ ---------------------------------------------------------------------------------
+ (6) _Delay10TCYx                                          1     1      0      15
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (4) _SWStartI2C                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _SWAckI2C                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 6
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _ChargerReset
+     _ChargerMode
+       _writeCommand
+         _SWAckI2C
+         _SWStartI2C
+         _SWWriteI2C
+           _Clock_test
+             _Delay10TCYx
+       _writeWord
+         _SWAckI2C
+         _SWStopI2C
+         _SWWriteI2C
+           _Clock_test
+             _Delay10TCYx
+   _ChargingCurrent
+     _writeCommand
+       _SWAckI2C
+       _SWStartI2C
+       _SWWriteI2C
+         _Clock_test
+           _Delay10TCYx
+     _writeWord
+       _SWAckI2C
+       _SWStopI2C
+       _SWWriteI2C
+         _Clock_test
+           _Delay10TCYx
+   _ChargingVoltage
+     _writeCommand
+       _SWAckI2C
+       _SWStartI2C
+       _SWWriteI2C
+         _Clock_test
+           _Delay10TCYx
+     _writeWord
+       _SWAckI2C
+       _SWStopI2C
+       _SWWriteI2C
+         _Clock_test
+           _Delay10TCYx
+   _IsChargerStatusChange
+     _ChargerStatus
+       _readWord
+         _SWAckI2C
+         _SWGetsI2C
+           _SWReadI2C
+             _Clock_test
+               _Delay10TCYx
+         _SWRestartI2C
+         _SWStopI2C
+         _SWWriteI2C
+           _Clock_test
+             _Delay10TCYx
+       _writeCommand
+         _SWAckI2C
+         _SWStartI2C
+         _SWWriteI2C
+           _Clock_test
+             _Delay10TCYx
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             1FF      0       0       8        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     15      23       1       36.8%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      23       7        0.0%
+DATA                 0      0      23       9        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.45 build -152302408 
+Symbol Table                                                                                   Sun Apr 08 14:27:15 2018
+
+               SWGetsI2C@length 0006                  SWGetsI2C@rdptr 0004                  SWGetsI2C@thold 0007  
+                  __CFG_CP0$OFF 000000                    __CFG_CP1$OFF 000000                             l301 0344  
+                           l303 0348                             l250 03CA                             l330 0524  
+                           l251 03DC                             l252 03EC                             l262 0400  
+                           l351 064A                             l255 0358                             l271 049C  
+                           l248 03BA                             l264 0410                             l280 04D4  
+                           l272 04B4                             l328 04FA                             l265 0420  
+                           l257 036E                             l266 0430                             l282 04EE  
+                           l290 056E                             l370 0468                             l258 037E  
+                           l275 05CA                             l259 039A                             l292 0586  
+                           l277 05E2                             l285 059C                             l381 02CA  
+                           l269 048A                             l614 0662                             l390 023C  
+                           l359 065C                             l391 0242                             l287 05B4  
+                           l295 0308                             l392 025C                             l368 043E  
+                           l296 02F0                             l385 0220                             l386 0232  
+                           l378 029E                             l389 0276                    __CFG_CPB$OFF 000000  
+                  __CFG_CPD$OFF 000000                    __CFG_BORV$19 000000                             wreg 000FE8  
+                  __CFG_IESO$ON 000000                    __CFG_LVP$OFF 000000                            u1250 02E6  
+                          u1507 02FA                            u1460 0324                            u1517 05EE  
+                          u1607 0620                            u1527 05F8                            u1480 0338  
+                          u1617 024C                            u1537 0604                            u1627 0256  
+                          u1547 02BA                            u1637 0264                            u1557 02C4  
+                          u1647 026E                            u1567 02D2                            u1657 0664  
+                          u1577 02DC                            u1667 0676                            u1587 0444  
+                          u1677 0636                            u1597 0616                    __CFG_WDTPS$1 000000  
+                 __CFG_FCMEN$ON 000000                            _main 04F2                            _mode 0022  
+                          fsr2h 000FDA                            indf2 000FDF                            fsr2l 000FD9  
+                          start 0000                   __CFG_FOSC$IRC 000000                   __CFG_MCLRE$ON 000000  
+                  ___param_bank 000000                 _coefficient_ACR 0207                     _Delay10TCYx 0660  
+          __end_of_SWRestartI2C 060C                   __CFG_PLLEN$ON 000000                      _Clock_test 064E  
+                    _SWStartI2C 0670                           ?_main 0001                           _ANSEL 000F7E  
+                         _LATB7 007C57                  __CFG_DEBUG$OFF 000000                  __CFG_BBSIZ$OFF 000000  
+                    _SWWriteI2C 0214                   __CFG_WRT0$OFF 000000                   __CFG_WRT1$OFF 000000  
+                __CFG_EBTR0$OFF 000000                     _ChargerMode 05B8                  __CFG_EBTR1$OFF 000000  
+                 __CFG_WRTB$OFF 000000                   __CFG_WRTC$OFF 000000                   __CFG_WRTD$OFF 000000  
+                __CFG_EBTRB$OFF 000000                           tablat 000FF5                __end_of_SWAckI2C 064E  
+                         status 000FD8                  ChargerMode@err 0007           __size_of_writeCommand 004E  
+               __initialization 052A                    __end_of_main 052A              __size_of_SWGetsI2C 006A  
+            __size_of_SWReadI2C 0046           __size_of_ChargerReset 003A                          ??_main 0015  
+                 __activetblptr 000001              __size_of_SWStopI2C 0022                    _writeCommand 03A2  
+                __CFG_WDTEN$OFF 000000                          _TRISB7 007C9F                          _STATUS 000FD8  
+       __end_of_coefficient_ACR 020A          ChargingCurrent@err_550 0008                  __CFG_PWRTEN$ON 000000  
+                __CFG_XINST$OFF 000000                    _ChargerReset 04B8   IsChargerStatusChange@attempts 0011  
+              __end_of_readWord 03A2                          clear_0 0548                     ?_Clock_test 0001  
+                   ?_SWStartI2C 0001                          _status 001E                     ?_SWWriteI2C 0001  
+                  __pdataCOMRAM 0022        __size_of_ChargingCurrent 002E                    __mediumconst 0000  
+                        tblptrh 000FF7                          tblptrl 000FF6                          tblptru 000FF8  
+       ??_IsChargerStatusChange 000F                 __CFG_HFOFST$OFF 000000             ChargerReset@err_546 000A  
+             __end_of_SWGetsI2C 02EA        __size_of_ChargingVoltage 002E               __end_of_SWReadI2C 047E  
+                    __accesstop 0060         __end_of__initialization 054E                   ___rparam_used 000001  
+         __size_of_SWRestartI2C 0026               __end_of_SWStopI2C 062E                 ChargerReset@err 0009  
+                __pcstackCOMRAM 0001                       ?_SWAckI2C 0001                 __CFG_PCLKEN$OFF 000000  
+         __end_of_coefficient_I 0213           __end_of_coefficient_T 0210           __end_of_coefficient_U 020D  
+        __size_of_ChargerStatus 003A                    _SWRestartI2C 05E6               ChargingCurrent@I0 0005  
+           __size_of_Clock_test 0012             __size_of_SWStartI2C 000E             __size_of_SWWriteI2C 006C  
+                  ?_Delay10TCYx 0001                      ??_SWAckI2C 0001                    ?_ChargerMode 0005  
+ __end_of_coefficient_Remaining 0207               ??_ChargingCurrent 0007                       ?_readWord 0009  
+            __size_of_writeWord 0048               ??_ChargingVoltage 0007                         __Hparam 0000  
+                       __Lparam 0000                   _ChargerStatus 047E                    __psmallconst 0200  
+               __CFG_STVREN$OFF 000000                         __pcinit 052A                 Delay10TCYx@unit 0001  
+                       __ramtop 0200                         __ptext0 04F2                         __ptext1 02EA  
+                       __ptext2 047E                         __ptext3 034C                         __ptext4 05E6  
+                       __ptext5 0280                         __ptext6 0438                         __ptext7 055C  
+                       __ptext8 058A                         __ptext9 04B8            ChargerStatus@err_512 000E  
+          ChargerStatus@pStatus 000B               ChargingVoltage@V0 0005                         main@err 0015  
+          end_of_initialization 054E                    readWord@pBuf 0009                      ??_readWord 000B  
+                ?_ChargerStatus 000B                         postinc0 000FEE                    ??_Clock_test 0002  
+                  ??_SWStartI2C 0001                       _PORTCbits 000F82                    ??_SWWriteI2C 0002  
+             __end_of_writeWord 0438                       _TRISCbits 000F94  __size_of_IsChargerStatusChange 0062  
+ __end_of_IsChargerStatusChange 034C                    writeWord@buf 0003                       _SWGetsI2C 0280  
+            __end_of_Clock_test 0660              __end_of_SWStartI2C 067E                       _SWReadI2C 0438  
+            __end_of_SWWriteI2C 0280                  _coefficient_AS 0201                       _SWStopI2C 060C  
+          __size_of_Delay10TCYx 0010                   __pidataCOMRAM 067E             start_initialization 052A  
+             __size_of_SWAckI2C 0020            __size_of_ChargerMode 002E                ChargerStatus@err 000D  
+                    ?_SWGetsI2C 0004                 ??_ChargerStatus 000D                      ?_SWReadI2C 0002  
+        __end_of_coefficient_AS 0204                      ?_SWStopI2C 0001                 _ChargingCurrent 058A  
+                   __pbssCOMRAM 0016              ChargingCurrent@err 0007                 _ChargingVoltage 055C  
+             __size_of_readWord 0056                     _BIT_COUNTER 0020                     __smallconst 0200  
+                 ?_writeCommand 0001           _coefficient_Remaining 0204                        _LATCbits 000F8B  
+                   ??_SWGetsI2C 0007                     ??_SWReadI2C 0004                   ?_ChargerReset 0001  
+                   ??_SWStopI2C 0001         __end_of_ChargingCurrent 05B8                        _SWAckI2C 062E  
+        ChargerMode@chargerMode 0005                      _I2C_BUFFER 0021         __end_of_ChargingVoltage 058A  
+            SWWriteI2C@data_out 0002                  ??_writeCommand 0003                   _coefficient_I 0210  
+                 _coefficient_T 020D                   _coefficient_U 020A                       _writeWord 03F0  
+      IsChargerStatusChange@err 0012        IsChargerStatusChange@tmp 0013                  ??_ChargerReset 0009  
+                      __Hrparam 0000                        __Lrparam 0000                    __Lsmallconst 0200  
+            __CFG_BOREN$SBORDIS 000000                 writeCommand@cmd 0003                        _addr_lsb 001A  
+                      _addr_msb 0016                        __ptext10 05B8                        __ptext11 03F0  
+                      __ptext12 060C                        __ptext13 03A2                        __ptext14 0214  
+                      __ptext15 064E                        __ptext16 0660                        __ptext17 0670  
+                      __ptext18 062E                   ?_SWRestartI2C 0001                      ?_writeWord 0003  
+         _IsChargerStatusChange 02EA                   __size_of_main 0038                        _readWord 034C  
+                 ??_Delay10TCYx 0001              ChargingVoltage@err 0007                ?_ChargingCurrent 0005  
+              ?_ChargingVoltage 0005                   ??_ChargerMode 0007                  ??_SWRestartI2C 0001  
+            ChargerMode@err_530 0008                      _OSCCONbits 000FD3           __end_of_ChargerStatus 04B8  
+          __end_of_writeCommand 03F0             __end_of_Delay10TCYx 0670            __end_of_ChargerReset 04F2  
+                   ??_writeWord 0005          ?_IsChargerStatusChange 0001             __end_of_ChargerMode 05E6  
+                    _STATUSbits 000FD8          ChargingVoltage@err_554 0008  

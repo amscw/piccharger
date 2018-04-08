@@ -1,0 +1,528 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F14K22 ]
+[d frameptr 4065 ]
+"192 C:\work\git\piccharger\src/DS2788_OneWireProtocol.c
+[e E2910 . `uc
+false 0
+true 1
+]
+"44 C:\work\git\piccharger\src/charger.c
+[e E74 cmd_ `uc
+CHARGER_MODE 18
+CHARGING_CURRENT 20
+CHARGING_VOLTAGE 21
+CHARGER_ALARM_WARNING 22
+CHARGER_STATUS 19
+]
+[e E29 err_ `uc
+ERR_OK 0
+ERR_TRUE 1
+ERR_NULLPTR 2
+ERR_SWI2C_READ 3
+ERR_SWI2C_WRITE 4
+ERR_SWI2C_NOACK 5
+]
+"49
+[e E2965 op_t `uc
+WRITE 0
+READ 1
+]
+"18 C:\work\git\piccharger\src/main.c
+[e E2879 err_ `uc
+ERR_OK 0
+ERR_TRUE 1
+ERR_NULLPTR 2
+ERR_SWI2C_READ 3
+ERR_SWI2C_WRITE 4
+ERR_SWI2C_NOACK 5
+]
+"42 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"27 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic18\d10tcyx.c
+[v _Delay10TCYx Delay10TCYx `(v  1 e 1 0 ]
+"43 C:\work\git\piccharger\src/charger.c
+[v _writeCommand writeCommand `(E29  1 s 1 writeCommand ]
+"72
+[v _readWord readWord `(E29  1 s 1 readWord ]
+"103
+[v _writeWord writeWord `(E29  1 s 1 writeWord ]
+"130
+[v _ChargerStatus ChargerStatus `(E29  1 e 1 0 ]
+"141
+[v _ChargerMode ChargerMode `(E29  1 e 1 0 ]
+"149
+[v _ChargerReset ChargerReset `(E29  1 e 1 0 ]
+"161
+[v _ChargingCurrent ChargingCurrent `(E29  1 e 1 0 ]
+"169
+[v _ChargingVoltage ChargingVoltage `(E29  1 e 1 0 ]
+"181
+[v _IsChargerStatusChange IsChargerStatusChange `(E29  1 e 1 0 ]
+"3 C:\work\git\piccharger\src/DS2788_OneWireProtocol.c
+[v _copy_EEPROM copy_EEPROM `(v  1 e 1 0 ]
+"17
+[v _write_data write_data `(v  1 e 1 0 ]
+"25
+[v _read_data read_data `(uc  1 e 1 0 ]
+"37
+[v _write_IAE write_IAE `(v  1 e 1 0 ]
+"48
+[v _write_VAE write_VAE `(v  1 e 1 0 ]
+"59
+[v _write_IMIN write_IMIN `(v  1 e 1 0 ]
+"70
+[v _write_VCHG write_VCHG `(v  1 e 1 0 ]
+"81
+[v _write_RSNSP write_RSNSP `(v  1 e 1 0 ]
+"101
+[v _write_AS write_AS `(v  1 e 1 0 ]
+"107
+[v _write_AC write_AC `(v  1 e 1 0 ]
+"24 C:\work\git\piccharger\src/DS2788_OneWireProtocol.h
+[s S95 Status_Register 6 `E2910 1 CHGTF 1 0 `E2910 1 AEF 1 1 `E2910 1 SEF 1 2 `E2910 1 LEARNF 1 3 `E2910 1 UVF 1 4 `E2910 1 PORF 1 5 ]
+"426 C:\work\git\piccharger\src/DS2788_OneWireProtocol.c
+[v _set_Status set_Status `(S95  1 e 6 0 ]
+"17 C:\work\git\piccharger\src/main.c
+[v _main main `(v  1 e 1 0 ]
+"16 C:\work\git\piccharger\src/OneWire.c
+[v _OneWire_Init OneWire_Init `(i  1 e 2 0 ]
+"35
+[v _OneWire_Reset OneWire_Reset `(v  1 e 1 0 ]
+"51
+[v _OneWire_Presence OneWire_Presence `(uc  1 e 1 0 ]
+"73
+[v _OneWire_SendBit OneWire_SendBit `(v  1 e 1 0 ]
+"91
+[v _OneWire_Send8 OneWire_Send8 `(i  1 e 2 0 ]
+"111
+[v _OneWire_Send16 OneWire_Send16 `(v  1 e 1 0 ]
+"154
+[v _OneWire_ReceiveBit OneWire_ReceiveBit `(uc  1 e 1 0 ]
+"195
+[v _OneWire_Receive8 OneWire_Receive8 `(uc  1 e 1 0 ]
+"212
+[v _OneWire_CRC8 OneWire_CRC8 `(i  1 e 2 0 ]
+"288
+[v _OneWire_SkipNetAddress OneWire_SkipNetAddress `(uc  1 e 1 0 ]
+"13 C:\work\git\piccharger\src/swi2c.c
+[v _SWAckI2C SWAckI2C `(c  1 e 1 0 ]
+"51
+[v _Clock_test Clock_test `(c  1 e 1 0 ]
+"74
+[v _SWReadI2C SWReadI2C `(i  1 e 2 0 ]
+"117
+[v _SWGetsI2C SWGetsI2C `(c  1 e 1 0 ]
+"161
+[v _SWWriteI2C SWWriteI2C `(c  1 e 1 0 ]
+"247
+[v _SWRestartI2C SWRestartI2C `(v  1 e 1 0 ]
+"266
+[v _SWStopI2C SWStopI2C `(v  1 e 1 0 ]
+"286
+[v _SWStartI2C SWStartI2C `(v  1 e 1 0 ]
+"767 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f14k22.h
+[v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
+[s S706 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"1365
+[s S748 . 1 `uc 1 AN4 1 0 :1:0 
+`uc 1 AN5 1 0 :1:1 
+`uc 1 AN6 1 0 :1:2 
+`uc 1 AN7 1 0 :1:3 
+`uc 1 SRNQ 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 AN8 1 0 :1:6 
+`uc 1 AN9 1 0 :1:7 
+]
+[s S757 . 1 `uc 1 C12INP 1 0 :1:0 
+`uc 1 C12IN1M 1 0 :1:1 
+`uc 1 C12IN2M 1 0 :1:2 
+`uc 1 C12IN3M 1 0 :1:3 
+`uc 1 C12OUT 1 0 :1:4 
+]
+[s S763 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 P1D 1 0 :1:2 
+`uc 1 P1C 1 0 :1:3 
+`uc 1 P1B 1 0 :1:4 
+`uc 1 P1A 1 0 :1:5 
+`uc 1 SS 1 0 :1:6 
+`uc 1 SDO 1 0 :1:7 
+]
+[s S771 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 NOT_SS 1 0 :1:6 
+]
+[s S774 . 1 `uc 1 C2INP 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 PGM 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CCP1 1 0 :1:5 
+`uc 1 nSS 1 0 :1:6 
+]
+[s S781 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CCP2 1 0 :1:1 
+`uc 1 PA1 1 0 :1:2 
+]
+[s S785 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PA2 1 0 :1:1 
+]
+[u S788 . 1 `S706 1 . 1 0 `S748 1 . 1 0 `S757 1 . 1 0 `S763 1 . 1 0 `S771 1 . 1 0 `S774 1 . 1 0 `S781 1 . 1 0 `S785 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES788  1 e 1 @3970 ]
+[s S657 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"1711
+[s S666 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 LC3 1 0 :1:3 
+`uc 1 LC4 1 0 :1:4 
+`uc 1 LC5 1 0 :1:5 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S675 . 1 `S657 1 . 1 0 `S666 1 . 1 0 ]
+[v _LATCbits LATCbits `VES675  1 e 1 @3979 ]
+[s S697 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2112
+[u S715 . 1 `S697 1 . 1 0 `S706 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES715  1 e 1 @3988 ]
+[s S603 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 HFIOFS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+`uc 1 IDLEN 1 0 :1:7 
+]
+"5491
+[s S609 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+`uc 1 FLTS 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S617 . 1 `S603 1 . 1 0 `S609 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES617  1 e 1 @4051 ]
+"5642
+[v _STATUS STATUS `VEuc  1 e 1 @4056 ]
+[s S852 . 1 `uc 1 C 1 0 :1:0 
+`uc 1 DC 1 0 :1:1 
+`uc 1 Z 1 0 :1:2 
+`uc 1 OV 1 0 :1:3 
+`uc 1 N 1 0 :1:4 
+]
+"5663
+[s S858 . 1 `uc 1 CARRY 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ZERO 1 0 :1:2 
+`uc 1 OVERFLOW 1 0 :1:3 
+`uc 1 NEGATIVE 1 0 :1:4 
+]
+[u S864 . 1 `S852 1 . 1 0 `S858 1 . 1 0 ]
+[v _STATUSbits STATUSbits `VES864  1 e 1 @4056 ]
+"6898
+[v _LATB7 LATB7 `VEb  1 e 0 @31831 ]
+"7432
+[v _TRISB7 TRISB7 `VEb  1 e 0 @31903 ]
+[s S388 . 2 `uc 1 INHIBIT_CHARGE 1 0 :1:0 
+`uc 1 ENABLE_POLLING 1 0 :1:1 
+`uc 1 POR_RESET 1 0 :1:2 
+`uc 1 RESET_TO_ZERO 1 0 :1:3 
+`uc 1 bit_4 1 0 :1:4 
+`uc 1 BATTERY_PRESENT_MASK 1 0 :1:5 
+`uc 1 POWER_FAIL_MASK 1 0 :1:6 
+`uc 1 _7 1 0 :1:7 
+`uc 1 _8_9 1 1 :2:0 
+`uc 1 HOT_SHOP 1 1 :1:2 
+`uc 1 _11_15 1 1 :5:3 
+]
+"18 C:\work\git\piccharger\src/charger.c
+[u S400 . 2 `S388 1 bits 2 0 `ui 1 word 2 0 ]
+[v _mode mode `S400  1 s 2 mode ]
+[s S403 . 2 `uc 1 CHARGE_INHIBITED 1 0 :1:0 
+`uc 1 MASTER_MODE 1 0 :1:1 
+`uc 1 VOLTAGE_NOTREG 1 0 :1:2 
+`uc 1 CURRENT_NOTREG 1 0 :1:3 
+`uc 1 LEVEL_2 1 0 :1:4 
+`uc 1 LEVEL_3 1 0 :1:5 
+`uc 1 CURRENT_OR 1 0 :1:6 
+`uc 1 VOLTAGE_OR 1 0 :1:7 
+`uc 1 THERMISTOR_OR 1 1 :1:0 
+`uc 1 THERMISTOR_COLD 1 1 :1:1 
+`uc 1 THERMISTOR_HOT 1 1 :1:2 
+`uc 1 THERMISTOR_UR 1 1 :1:3 
+`uc 1 ALARM_INHIBITED 1 1 :1:4 
+`uc 1 POWER_FAIL 1 1 :1:5 
+`uc 1 BATTERY_PRESENT 1 1 :1:6 
+`uc 1 AC_PRESENT 1 1 :1:7 
+]
+"32
+[u S420 . 2 `S403 1 bits 2 0 `ui 1 word 2 0 ]
+[v _status status `S420  1 s 2 status ]
+"129 C:\work\git\piccharger\src/DS2788_OneWireProtocol.h
+[v _coefficient_I coefficient_I `Cf  1 e 3 0 ]
+"130
+[v _coefficient_T coefficient_T `Cf  1 e 3 0 ]
+"131
+[v _coefficient_U coefficient_U `Cf  1 e 3 0 ]
+"133
+[v _coefficient_Remaining coefficient_Remaining `Cf  1 e 3 0 ]
+"134
+[v _coefficient_AS coefficient_AS `Cf  1 e 3 0 ]
+"39 C:\work\git\piccharger\src/OneWire.h
+[v _addr_lsb addr_lsb `l  1 e 4 0 ]
+"40
+[v _addr_msb addr_msb `l  1 e 4 0 ]
+"65 C:\work\git\piccharger\src/swi2c.c
+[v _I2C_BUFFER I2C_BUFFER `uc  1 e 1 0 ]
+"66
+[v _BIT_COUNTER BIT_COUNTER `uc  1 e 1 0 ]
+"17 C:\work\git\piccharger\src/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"18
+[v main@err err `E2879  1 a 1 20 ]
+"40
+} 0
+"181 C:\work\git\piccharger\src/charger.c
+[v _IsChargerStatusChange IsChargerStatusChange `(E29  1 e 1 0 ]
+{
+[s S403 . 2 `uc 1 CHARGE_INHIBITED 1 0 :1:0 
+`uc 1 MASTER_MODE 1 0 :1:1 
+`uc 1 VOLTAGE_NOTREG 1 0 :1:2 
+`uc 1 CURRENT_NOTREG 1 0 :1:3 
+`uc 1 LEVEL_2 1 0 :1:4 
+`uc 1 LEVEL_3 1 0 :1:5 
+`uc 1 CURRENT_OR 1 0 :1:6 
+`uc 1 VOLTAGE_OR 1 0 :1:7 
+`uc 1 THERMISTOR_OR 1 1 :1:0 
+`uc 1 THERMISTOR_COLD 1 1 :1:1 
+`uc 1 THERMISTOR_HOT 1 1 :1:2 
+`uc 1 THERMISTOR_UR 1 1 :1:3 
+`uc 1 ALARM_INHIBITED 1 1 :1:4 
+`uc 1 POWER_FAIL 1 1 :1:5 
+`uc 1 BATTERY_PRESENT 1 1 :1:6 
+`uc 1 AC_PRESENT 1 1 :1:7 
+]
+"185
+[u S420 . 2 `S403 1 bits 2 0 `ui 1 word 2 0 ]
+[v IsChargerStatusChange@tmp tmp `S420  1 a 2 18 ]
+"183
+[v IsChargerStatusChange@err err `E29  1 a 1 17 ]
+"184
+[v IsChargerStatusChange@attempts attempts `uc  1 a 1 16 ]
+"200
+} 0
+"130
+[v _ChargerStatus ChargerStatus `(E29  1 e 1 0 ]
+{
+"136
+[v ChargerStatus@err_512 err `E29  1 a 1 13 ]
+"135
+[v ChargerStatus@err err `E29  1 a 1 12 ]
+[s S403 . 2 `uc 1 CHARGE_INHIBITED 1 0 :1:0 
+`uc 1 MASTER_MODE 1 0 :1:1 
+`uc 1 VOLTAGE_NOTREG 1 0 :1:2 
+`uc 1 CURRENT_NOTREG 1 0 :1:3 
+`uc 1 LEVEL_2 1 0 :1:4 
+`uc 1 LEVEL_3 1 0 :1:5 
+`uc 1 CURRENT_OR 1 0 :1:6 
+`uc 1 VOLTAGE_OR 1 0 :1:7 
+`uc 1 THERMISTOR_OR 1 1 :1:0 
+`uc 1 THERMISTOR_COLD 1 1 :1:1 
+`uc 1 THERMISTOR_HOT 1 1 :1:2 
+`uc 1 THERMISTOR_UR 1 1 :1:3 
+`uc 1 ALARM_INHIBITED 1 1 :1:4 
+`uc 1 POWER_FAIL 1 1 :1:5 
+`uc 1 BATTERY_PRESENT 1 1 :1:6 
+`uc 1 AC_PRESENT 1 1 :1:7 
+]
+"130
+[u S420 . 2 `S403 1 bits 2 0 `ui 1 word 2 0 ]
+[v ChargerStatus@pStatus pStatus `*.39S420  1 p 2 10 ]
+"139
+} 0
+"72
+[v _readWord readWord `(E29  1 s 1 readWord ]
+{
+[v readWord@pBuf pBuf `*.39ui  1 p 2 8 ]
+"96
+} 0
+"247 C:\work\git\piccharger\src/swi2c.c
+[v _SWRestartI2C SWRestartI2C `(v  1 e 1 0 ]
+{
+"258
+} 0
+"117
+[v _SWGetsI2C SWGetsI2C `(c  1 e 1 0 ]
+{
+"119
+[v SWGetsI2C@thold thold `ui  1 a 2 6 ]
+"117
+[v SWGetsI2C@rdptr rdptr `*.39uc  1 p 2 3 ]
+[v SWGetsI2C@length length `uc  1 p 1 5 ]
+"152
+} 0
+"74
+[v _SWReadI2C SWReadI2C `(i  1 e 2 0 ]
+{
+"105
+} 0
+"169 C:\work\git\piccharger\src/charger.c
+[v _ChargingVoltage ChargingVoltage `(E29  1 e 1 0 ]
+{
+"172
+[v ChargingVoltage@err_554 err `E29  1 a 1 7 ]
+"171
+[v ChargingVoltage@err err `E29  1 a 1 6 ]
+"169
+[v ChargingVoltage@V0 V0 `ui  1 p 2 4 ]
+"175
+} 0
+"161
+[v _ChargingCurrent ChargingCurrent `(E29  1 e 1 0 ]
+{
+"164
+[v ChargingCurrent@err_550 err `E29  1 a 1 7 ]
+"163
+[v ChargingCurrent@err err `E29  1 a 1 6 ]
+"161
+[v ChargingCurrent@I0 I0 `ui  1 p 2 4 ]
+"167
+} 0
+"149
+[v _ChargerReset ChargerReset `(E29  1 e 1 0 ]
+{
+"156
+[v ChargerReset@err_546 err `E29  1 a 1 9 ]
+"153
+[v ChargerReset@err err `E29  1 a 1 8 ]
+"159
+} 0
+"141
+[v _ChargerMode ChargerMode `(E29  1 e 1 0 ]
+{
+"144
+[v ChargerMode@err_530 err `E29  1 a 1 7 ]
+"143
+[v ChargerMode@err err `E29  1 a 1 6 ]
+[s S388 . 2 `uc 1 INHIBIT_CHARGE 1 0 :1:0 
+`uc 1 ENABLE_POLLING 1 0 :1:1 
+`uc 1 POR_RESET 1 0 :1:2 
+`uc 1 RESET_TO_ZERO 1 0 :1:3 
+`uc 1 bit_4 1 0 :1:4 
+`uc 1 BATTERY_PRESENT_MASK 1 0 :1:5 
+`uc 1 POWER_FAIL_MASK 1 0 :1:6 
+`uc 1 _7 1 0 :1:7 
+`uc 1 _8_9 1 1 :2:0 
+`uc 1 HOT_SHOP 1 1 :1:2 
+`uc 1 _11_15 1 1 :5:3 
+]
+"141
+[u S400 . 2 `S388 1 bits 2 0 `ui 1 word 2 0 ]
+[v ChargerMode@chargerMode chargerMode `S400  1 p 2 4 ]
+"147
+} 0
+"103
+[v _writeWord writeWord `(E29  1 s 1 writeWord ]
+{
+[v writeWord@buf buf `ui  1 p 2 2 ]
+"125
+} 0
+"266 C:\work\git\piccharger\src/swi2c.c
+[v _SWStopI2C SWStopI2C `(v  1 e 1 0 ]
+{
+"278
+} 0
+"43 C:\work\git\piccharger\src/charger.c
+[v _writeCommand writeCommand `(E29  1 s 1 writeCommand ]
+{
+[v writeCommand@cmd cmd `E74  1 a 1 wreg ]
+[v writeCommand@cmd cmd `E74  1 a 1 wreg ]
+"46
+[v writeCommand@cmd cmd `E74  1 a 1 2 ]
+"65
+} 0
+"161 C:\work\git\piccharger\src/swi2c.c
+[v _SWWriteI2C SWWriteI2C `(c  1 e 1 0 ]
+{
+[v SWWriteI2C@data_out data_out `uc  1 a 1 wreg ]
+[v SWWriteI2C@data_out data_out `uc  1 a 1 wreg ]
+"163
+[v SWWriteI2C@data_out data_out `uc  1 a 1 1 ]
+"214
+} 0
+"51
+[v _Clock_test Clock_test `(c  1 e 1 0 ]
+{
+"63
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic18\d10tcyx.c
+[v _Delay10TCYx Delay10TCYx `(v  1 e 1 0 ]
+{
+[v Delay10TCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay10TCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay10TCYx@unit unit `uc  1 a 1 0 ]
+"13
+} 0
+"286 C:\work\git\piccharger\src/swi2c.c
+[v _SWStartI2C SWStartI2C `(v  1 e 1 0 ]
+{
+"291
+} 0
+"13
+[v _SWAckI2C SWAckI2C `(c  1 e 1 0 ]
+{
+"31
+} 0

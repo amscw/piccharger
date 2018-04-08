@@ -1,0 +1,1153 @@
+Microchip MPLAB XC8 Compiler V1.45 ()
+
+Linker command line:
+
+-W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.45\dat\en_msgs.txt -cs \
+  -h+dist/default/production\piccharger.production.sym \
+  --cmf=dist/default/production\piccharger.production.cmf -z -Q18F14K22 \
+  -oC:\Users\moskw\AppData\Local\Temp\s4m0.2 \
+  -Mdist/default/production/piccharger.production.map -E1 -ver=XC8 \
+  -ASTACK=060h-01ffh -pstack=STACK -ACODE=00h-03FFFh -ACONST=00h-03FFFh \
+  -ASMALLCONST=0200h-02FFhx62 -AMEDIUMCONST=0200h-03FFFh -ACOMRAM=01h-05Fh \
+  -AABS1=00h-01FFh -ABIGRAM=01h-01FFh -ARAM=060h-0FFh,0100h-01FFh \
+  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ASFR=0F60h-0FFFh \
+  -preset_vec=00h,intcode,intcodelo,powerup,init -pramtop=0200h \
+  -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
+  -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
+  -AIDLOC=0200000h-0200007h -pidloc=IDLOC -AEEDATA=0F00000h-0F000FFh \
+  -peeprom_data=EEDATA \
+  -prdata=COMRAM,nvrram=COMRAM,nvbit=COMRAM,rbss=COMRAM,rbit=COMRAM \
+  -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
+  -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
+  -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
+  C:\Users\moskw\AppData\Local\Temp\s4m0.obj \
+  dist/default/production\piccharger.production.obj 
+
+Object code version is 3.11
+
+Machine type is 18F14K22
+
+Call graph: (short form)
+
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\moskw\AppData\Local\Temp\s4m0.obj
+                init                                  0        0        4        0       0
+                idloc                            200000   200000        8   200000       0
+                config                           300000   300000        E   300000       0
+dist/default/production\piccharger.production.obj
+                smallconst                          200      200       14      100       0
+                text18                              62E      62E       20      10A       0
+                text17                              670      670        E      10A       0
+                text16                              660      660       10      10A       0
+                text15                              64E      64E       12      10A       0
+                text14                              214      214       6C      10A       0
+                text13                              3A2      3A2       4E      10A       0
+                text12                              60C      60C       22      10A       0
+                text11                              3F0      3F0       48      10A       0
+                text10                              5B8      5B8       2E      10A       0
+                text9                               4B8      4B8       3A      10A       0
+                text8                               58A      58A       2E      10A       0
+                text7                               55C      55C       2E      10A       0
+                text6                               438      438       46      10A       0
+                text5                               280      280       6A      10A       0
+                text4                               5E6      5E6       26      10A       0
+                text3                               34C      34C       56      10A       0
+                text2                               47E      47E       3A      10A       0
+                text1                               2EA      2EA       62      10A       0
+                text0                               4F2      4F2       38      10A       0
+                cstackCOMRAM                          1        1       15        1       1
+                dataCOMRAM                           22       22        2        1       1
+                bssCOMRAM                            16       16        C        1       1
+                cinit                               52A      52A       32      10A       0
+                idataCOMRAM                         67E      67E        2      10A       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   STACK          
+
+        CLASS   CODE           
+                init                                  0        0        4         0
+                text18                              62E      62E       20         0
+                text17                              670      670        E         0
+                text16                              660      660       10         0
+                text15                              64E      64E       12         0
+                text14                              214      214       6C         0
+                text13                              3A2      3A2       4E         0
+                text12                              60C      60C       22         0
+                text11                              3F0      3F0       48         0
+                text10                              5B8      5B8       2E         0
+                text9                               4B8      4B8       3A         0
+                text8                               58A      58A       2E         0
+                text7                               55C      55C       2E         0
+                text6                               438      438       46         0
+                text5                               280      280       6A         0
+                text4                               5E6      5E6       26         0
+                text3                               34C      34C       56         0
+                text2                               47E      47E       3A         0
+                text1                               2EA      2EA       62         0
+                text0                               4F2      4F2       38         0
+                cinit                               52A      52A       32         0
+                idataCOMRAM                         67E      67E        2         0
+
+        CLASS   CONST          
+
+        CLASS   SMALLCONST     
+                smallconst                          200      200       14         0
+
+        CLASS   MEDIUMCONST    
+
+        CLASS   COMRAM         
+                cstackCOMRAM                          1        1       15         1
+                dataCOMRAM                           22       22        2         1
+                bssCOMRAM                            16       16        C         1
+
+        CLASS   ABS1           
+
+        CLASS   BIGRAM         
+
+        CLASS   RAM            
+
+        CLASS   BANK0          
+
+        CLASS   BANK1          
+
+        CLASS   SFR            
+
+        CLASS   FARRAM         
+
+        CLASS   CONFIG         
+                config                           300000   300000        E         0
+
+        CLASS   IDLOC          
+                idloc                            200000   200000        8         0
+
+        CLASS   EEDATA         
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
+
+                reset_vec                      000000  000004  000004         0       0  CODE    
+                cstackCOMRAM                   000001  000023  000024         1       1  COMRAM  
+                smallconst                     000200  000014  000214       100       0  SMALLCON
+                text14                         000214  00046C  000680       10A       0  CODE    
+                idloc                          200000  000008  200008    200000       0  IDLOC   
+                config                         300000  00000E  30000E    300000       0  CONFIG  
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            000060-0000FF               A0
+        BANK1            000100-0001FF              100
+        BIGRAM           000024-0001FF              1DC
+        CODE             000004-0001FF              1FC
+                         000680-003FFF             3980
+        COMRAM           000024-00005F               3C
+        CONST            000004-0001FF              1FC
+                         000680-003FFF             3980
+        EEDATA           F00000-F000FF              100
+        MEDIUMCONST      000680-003FFF             3980
+        RAM              000060-0001FF               A0
+        SFR              000F60-000FFF               A0
+        SMALLCONST       000680-003FFF              100
+        STACK            000060-0001FF              1A0
+
+                                  Symbol Table
+
+?_SWReadI2C                     cstackCOMRAM 000002
+ChargerMode@chargerMode         cstackCOMRAM 000005
+ChargerMode@err                 cstackCOMRAM 000007
+ChargerMode@err_530             cstackCOMRAM 000008
+ChargerReset@err                cstackCOMRAM 000009
+ChargerReset@err_546            cstackCOMRAM 00000A
+ChargerStatus@err               cstackCOMRAM 00000D
+ChargerStatus@err_512           cstackCOMRAM 00000E
+ChargerStatus@pStatus           cstackCOMRAM 00000B
+ChargingCurrent@I0              cstackCOMRAM 000005
+ChargingCurrent@err             cstackCOMRAM 000007
+ChargingCurrent@err_550         cstackCOMRAM 000008
+ChargingVoltage@V0              cstackCOMRAM 000005
+ChargingVoltage@err             cstackCOMRAM 000007
+ChargingVoltage@err_554         cstackCOMRAM 000008
+Delay10TCYx@unit                cstackCOMRAM 000001
+IsChargerStatusChange@attempts  cstackCOMRAM 000011
+IsChargerStatusChange@err       cstackCOMRAM 000012
+IsChargerStatusChange@tmp       cstackCOMRAM 000013
+SWGetsI2C@length                cstackCOMRAM 000006
+SWGetsI2C@rdptr                 cstackCOMRAM 000004
+SWGetsI2C@thold                 cstackCOMRAM 000007
+SWWriteI2C@data_out             cstackCOMRAM 000002
+_ANSEL                          (abs)        000F7E
+_BIT_COUNTER                    bssCOMRAM    000020
+_ChargerMode                    text10       0005B8
+_ChargerReset                   text9        0004B8
+_ChargerStatus                  text2        00047E
+_ChargingCurrent                text8        00058A
+_ChargingVoltage                text7        00055C
+_Clock_test                     text15       00064E
+_Delay10TCYx                    text16       000660
+_I2C_BUFFER                     bssCOMRAM    000021
+_IsChargerStatusChange          text1        0002EA
+_LATB7                          (abs)        007C57
+_LATCbits                       (abs)        000F8B
+_OSCCONbits                     (abs)        000FD3
+_PORTCbits                      (abs)        000F82
+_STATUS                         (abs)        000FD8
+_STATUSbits                     (abs)        000FD8
+_SWAckI2C                       text18       00062E
+_SWGetsI2C                      text5        000280
+_SWReadI2C                      text6        000438
+_SWRestartI2C                   text4        0005E6
+_SWStartI2C                     text17       000670
+_SWStopI2C                      text12       00060C
+_SWWriteI2C                     text14       000214
+_TRISB7                         (abs)        007C9F
+_TRISCbits                      (abs)        000F94
+__CFG_BBSIZ$OFF                 (abs)        000000
+__CFG_BOREN$SBORDIS             (abs)        000000
+__CFG_BORV$19                   (abs)        000000
+__CFG_CP0$OFF                   (abs)        000000
+__CFG_CP1$OFF                   (abs)        000000
+__CFG_CPB$OFF                   (abs)        000000
+__CFG_CPD$OFF                   (abs)        000000
+__CFG_DEBUG$OFF                 (abs)        000000
+__CFG_EBTR0$OFF                 (abs)        000000
+__CFG_EBTR1$OFF                 (abs)        000000
+__CFG_EBTRB$OFF                 (abs)        000000
+__CFG_FCMEN$ON                  (abs)        000000
+__CFG_FOSC$IRC                  (abs)        000000
+__CFG_HFOFST$OFF                (abs)        000000
+__CFG_IESO$ON                   (abs)        000000
+__CFG_LVP$OFF                   (abs)        000000
+__CFG_MCLRE$ON                  (abs)        000000
+__CFG_PCLKEN$OFF                (abs)        000000
+__CFG_PLLEN$ON                  (abs)        000000
+__CFG_PWRTEN$ON                 (abs)        000000
+__CFG_STVREN$OFF                (abs)        000000
+__CFG_WDTEN$OFF                 (abs)        000000
+__CFG_WDTPS$1                   (abs)        000000
+__CFG_WRT0$OFF                  (abs)        000000
+__CFG_WRT1$OFF                  (abs)        000000
+__CFG_WRTB$OFF                  (abs)        000000
+__CFG_WRTC$OFF                  (abs)        000000
+__CFG_WRTD$OFF                  (abs)        000000
+__CFG_XINST$OFF                 (abs)        000000
+__HRAM                          (abs)        000000
+__Habs1                         abs1         000000
+__Hbank0                        bank0        000000
+__Hbank1                        bank1        000000
+__Hbigbss                       bigbss       000000
+__Hbigdata                      bigdata      000000
+__Hbigram                       bigram       000000
+__Hbss                          bss          000000
+__HbssCOMRAM                    bssCOMRAM    000000
+__Hcinit                        cinit        000000
+__Hclrtext                      clrtext      000000
+__Hcomram                       comram       000000
+__Hconfig                       config       30000E
+__Hconst                        const        000000
+__HcstackCOMRAM                 cstackCOMRAM 000000
+__Hdata                         data         000000
+__HdataCOMRAM                   dataCOMRAM   000000
+__Heeprom_data                  eeprom_data  000000
+__Hfarbss                       farbss       000000
+__Hfardata                      fardata      000000
+__Hibigdata                     ibigdata     000000
+__Hidata                        idata        000000
+__HidataCOMRAM                  idataCOMRAM  000000
+__Hidloc                        idloc        200008
+__Hifardata                     ifardata     000000
+__Hinit                         init         000004
+__Hintcode                      intcode      000000
+__Hintcode_body                 intcode_body 000000
+__Hintcodelo                    intcodelo    000000
+__Hintentry                     intentry     000000
+__Hintret                       intret       000000
+__Hintsave_regs                 intsave_regs 000000
+__Hirdata                       irdata       000000
+__Hmediumconst                  mediumconst  000000
+__HnvFARRAM                     nvFARRAM     000000
+__Hnvbit                        nvbit        000000
+__Hnvrram                       nvrram       000000
+__Hparam                        rparam       000000
+__Hpowerup                      powerup      000000
+__Hram                          ram          000000
+__Hramtop                       ramtop       000200
+__Hrbit                         rbit         000000
+__Hrbss                         rbss         000000
+__Hrdata                        rdata        000000
+__Hreset_vec                    reset_vec    000000
+__Hrparam                       rparam       000000
+__Hsfr                          sfr          000000
+__Hsmallconst                   smallconst   000214
+__Hspace_0                      (abs)        30000E
+__Hspace_1                      (abs)        000024
+__Hspace_2                      (abs)        000000
+__Hstack                        stack        000000
+__Hstruct                       struct       000000
+__Htemp                         temp         000000
+__Htext                         text         000000
+__Htext0                        text0        000000
+__Htext1                        text1        000000
+__Htext10                       text10       000000
+__Htext11                       text11       000000
+__Htext12                       text12       000000
+__Htext13                       text13       000000
+__Htext14                       text14       000000
+__Htext15                       text15       000000
+__Htext16                       text16       000000
+__Htext17                       text17       000000
+__Htext18                       text18       000000
+__Htext2                        text2        000000
+__Htext3                        text3        000000
+__Htext4                        text4        000000
+__Htext5                        text5        000000
+__Htext6                        text6        000000
+__Htext7                        text7        000000
+__Htext8                        text8        000000
+__Htext9                        text9        000000
+__LRAM                          (abs)        000001
+__Labs1                         abs1         000000
+__Lbank0                        bank0        000000
+__Lbank1                        bank1        000000
+__Lbigbss                       bigbss       000000
+__Lbigdata                      bigdata      000000
+__Lbigram                       bigram       000000
+__Lbss                          bss          000000
+__LbssCOMRAM                    bssCOMRAM    000000
+__Lcinit                        cinit        000000
+__Lclrtext                      clrtext      000000
+__Lcomram                       comram       000000
+__Lconfig                       config       300000
+__Lconst                        const        000000
+__LcstackCOMRAM                 cstackCOMRAM 000000
+__Ldata                         data         000000
+__LdataCOMRAM                   dataCOMRAM   000000
+__Leeprom_data                  eeprom_data  000000
+__Lfarbss                       farbss       000000
+__Lfardata                      fardata      000000
+__Libigdata                     ibigdata     000000
+__Lidata                        idata        000000
+__LidataCOMRAM                  idataCOMRAM  000000
+__Lidloc                        idloc        200000
+__Lifardata                     ifardata     000000
+__Linit                         init         000000
+__Lintcode                      intcode      000000
+__Lintcode_body                 intcode_body 000000
+__Lintcodelo                    intcodelo    000000
+__Lintentry                     intentry     000000
+__Lintret                       intret       000000
+__Lintsave_regs                 intsave_regs 000000
+__Lirdata                       irdata       000000
+__Lmediumconst                  mediumconst  000000
+__LnvFARRAM                     nvFARRAM     000000
+__Lnvbit                        nvbit        000000
+__Lnvrram                       nvrram       000000
+__Lparam                        rparam       000000
+__Lpowerup                      powerup      000000
+__Lram                          ram          000000
+__Lramtop                       ramtop       000200
+__Lrbit                         rbit         000000
+__Lrbss                         rbss         000000
+__Lrdata                        rdata        000000
+__Lreset_vec                    reset_vec    000000
+__Lrparam                       rparam       000000
+__Lsfr                          sfr          000000
+__Lsmallconst                   smallconst   000200
+__Lspace_0                      (abs)        000000
+__Lspace_1                      (abs)        000000
+__Lspace_2                      (abs)        000000
+__Lstack                        stack        000000
+__Lstruct                       struct       000000
+__Ltemp                         temp         000000
+__Ltext                         text         000000
+__Ltext0                        text0        000000
+__Ltext1                        text1        000000
+__Ltext10                       text10       000000
+__Ltext11                       text11       000000
+__Ltext12                       text12       000000
+__Ltext13                       text13       000000
+__Ltext14                       text14       000000
+__Ltext15                       text15       000000
+__Ltext16                       text16       000000
+__Ltext17                       text17       000000
+__Ltext18                       text18       000000
+__Ltext2                        text2        000000
+__Ltext3                        text3        000000
+__Ltext4                        text4        000000
+__Ltext5                        text5        000000
+__Ltext6                        text6        000000
+__Ltext7                        text7        000000
+__Ltext8                        text8        000000
+__Ltext9                        text9        000000
+__S0                            (abs)        30000E
+__S1                            (abs)        000024
+__S2                            (abs)        000000
+___inthi_sp                     stack        000000
+___intlo_sp                     stack        000000
+___param_bank                   (abs)        000000
+___rparam_used                  (abs)        000001
+___sp                           stack        000000
+__accesstop                     (abs)        000060
+__activetblptr                  (abs)        000001
+__end_of_ChargerMode            text10       0005E6
+__end_of_ChargerReset           text9        0004F2
+__end_of_ChargerStatus          text2        0004B8
+__end_of_ChargingCurrent        text8        0005B8
+__end_of_ChargingVoltage        text7        00058A
+__end_of_Clock_test             text15       000660
+__end_of_Delay10TCYx            text16       000670
+__end_of_IsChargerStatusChange  text1        00034C
+__end_of_SWAckI2C               text18       00064E
+__end_of_SWGetsI2C              text5        0002EA
+__end_of_SWReadI2C              text6        00047E
+__end_of_SWRestartI2C           text4        00060C
+__end_of_SWStartI2C             text17       00067E
+__end_of_SWStopI2C              text12       00062E
+__end_of_SWWriteI2C             text14       000280
+__end_of__initialization        cinit        00054E
+__end_of_coefficient_ACR        smallconst   00020A
+__end_of_coefficient_AS         smallconst   000204
+__end_of_coefficient_I          smallconst   000213
+__end_of_coefficient_Remaining  smallconst   000207
+__end_of_coefficient_T          smallconst   000210
+__end_of_coefficient_U          smallconst   00020D
+__end_of_main                   text0        00052A
+__end_of_readWord               text3        0003A2
+__end_of_writeCommand           text13       0003F0
+__end_of_writeWord              text11       000438
+__initialization                cinit        00052A
+__mediumconst                   mediumconst  000000
+__pbssCOMRAM                    bssCOMRAM    000016
+__pcinit                        cinit        00052A
+__pcstackCOMRAM                 cstackCOMRAM 000001
+__pdataCOMRAM                   dataCOMRAM   000022
+__pidataCOMRAM                  idataCOMRAM  00067E
+__psmallconst                   smallconst   000200
+__ptext0                        text0        0004F2
+__ptext1                        text1        0002EA
+__ptext10                       text10       0005B8
+__ptext11                       text11       0003F0
+__ptext12                       text12       00060C
+__ptext13                       text13       0003A2
+__ptext14                       text14       000214
+__ptext15                       text15       00064E
+__ptext16                       text16       000660
+__ptext17                       text17       000670
+__ptext18                       text18       00062E
+__ptext2                        text2        00047E
+__ptext3                        text3        00034C
+__ptext4                        text4        0005E6
+__ptext5                        text5        000280
+__ptext6                        text6        000438
+__ptext7                        text7        00055C
+__ptext8                        text8        00058A
+__ptext9                        text9        0004B8
+__ramtop                        ramtop       000200
+__size_of_ChargerMode           (abs)        000000
+__size_of_ChargerReset          (abs)        000000
+__size_of_ChargerStatus         (abs)        000000
+__size_of_ChargingCurrent       (abs)        000000
+__size_of_ChargingVoltage       (abs)        000000
+__size_of_Clock_test            (abs)        000000
+__size_of_Delay10TCYx           (abs)        000000
+__size_of_IsChargerStatusChange (abs)        000000
+__size_of_SWAckI2C              (abs)        000000
+__size_of_SWGetsI2C             (abs)        000000
+__size_of_SWReadI2C             (abs)        000000
+__size_of_SWRestartI2C          (abs)        000000
+__size_of_SWStartI2C            (abs)        000000
+__size_of_SWStopI2C             (abs)        000000
+__size_of_SWWriteI2C            (abs)        000000
+__size_of_main                  (abs)        000000
+__size_of_readWord              (abs)        000000
+__size_of_writeCommand          (abs)        000000
+__size_of_writeWord             (abs)        000000
+__smallconst                    smallconst   000200
+_addr_lsb                       bssCOMRAM    00001A
+_addr_msb                       bssCOMRAM    000016
+_coefficient_ACR                smallconst   000207
+_coefficient_AS                 smallconst   000201
+_coefficient_I                  smallconst   000210
+_coefficient_Remaining          smallconst   000204
+_coefficient_T                  smallconst   00020D
+_coefficient_U                  smallconst   00020A
+_main                           text0        0004F2
+_mode                           dataCOMRAM   000022
+_readWord                       text3        00034C
+_status                         bssCOMRAM    00001E
+_writeCommand                   text13       0003A2
+_writeWord                      text11       0003F0
+end_of_initialization           cinit        00054E
+intlevel0                       text         000000
+intlevel1                       text         000000
+intlevel2                       text         000000
+intlevel3                       text         000000
+main@err                        cstackCOMRAM 000015
+readWord@pBuf                   cstackCOMRAM 000009
+stackhi                         (abs)        0001FF
+stacklo                         (abs)        000060
+start                           init         000000
+start_initialization            cinit        00052A
+writeCommand@cmd                cstackCOMRAM 000003
+writeWord@buf                   cstackCOMRAM 000003
+
+
+FUNCTION INFORMATION:
+
+ *************** function _main *****************
+ Defined at:
+		line 17 in file "src/main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  err             1   20[COMRAM] enum E2879
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         1       0       0
+      Temps:          0       0       0
+      Totals:         1       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels required when called:    7
+ This function calls:
+		_ChargerReset
+		_ChargingCurrent
+		_ChargingVoltage
+		_IsChargerStatusChange
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _IsChargerStatusChange *****************
+ Defined at:
+		line 181 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  tmp             2   18[COMRAM] struct .
+  err             1   17[COMRAM] enum E29
+  attempts        1   16[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         4       0       0
+      Temps:          2       0       0
+      Totals:         6       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_ChargerStatus
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _ChargerStatus *****************
+ Defined at:
+		line 130 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+  pStatus         2   10[COMRAM] PTR struct .
+		 -> IsChargerStatusChange@tmp(2), 
+ Auto vars:     Size  Location     Type
+  err             1   13[COMRAM] enum E29
+  err             1   12[COMRAM] enum E29
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         2       0       0
+      Locals:         2       0       0
+      Temps:          0       0       0
+      Totals:         4       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_readWord
+		_writeCommand
+ This function is called by:
+		_IsChargerStatusChange
+ This function uses a non-reentrant model
+
+
+ *************** function _readWord *****************
+ Defined at:
+		line 72 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+  pBuf            2    8[COMRAM] PTR unsigned int 
+		 -> IsChargerStatusChange@tmp(2), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         2       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         2       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_SWAckI2C
+		_SWGetsI2C
+		_SWRestartI2C
+		_SWStopI2C
+		_SWWriteI2C
+ This function is called by:
+		_ChargerStatus
+ This function uses a non-reentrant model
+
+
+ *************** function _SWRestartI2C *****************
+ Defined at:
+		line 247 in file "src/swi2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_readWord
+ This function uses a non-reentrant model
+
+
+ *************** function _SWGetsI2C *****************
+ Defined at:
+		line 117 in file "src/swi2c.c"
+ Parameters:    Size  Location     Type
+  rdptr           2    3[COMRAM] PTR unsigned char 
+		 -> IsChargerStatusChange@tmp(2), 
+  length          1    5[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  thold           2    6[COMRAM] unsigned int 
+ Return value:  Size  Location     Type
+                  1    wreg      char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         3       0       0
+      Locals:         2       0       0
+      Temps:          0       0       0
+      Totals:         5       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_SWReadI2C
+ This function is called by:
+		_readWord
+ This function uses a non-reentrant model
+
+
+ *************** function _SWReadI2C *****************
+ Defined at:
+		line 74 in file "src/swi2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  2    1[COMRAM] int 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         2       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         2       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_Clock_test
+ This function is called by:
+		_SWGetsI2C
+ This function uses a non-reentrant model
+
+
+ *************** function _ChargingVoltage *****************
+ Defined at:
+		line 169 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+  V0              2    4[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+  err             1    7[COMRAM] enum E29
+  err             1    6[COMRAM] enum E29
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         2       0       0
+      Locals:         2       0       0
+      Temps:          0       0       0
+      Totals:         4       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_writeCommand
+		_writeWord
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _ChargingCurrent *****************
+ Defined at:
+		line 161 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+  I0              2    4[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+  err             1    7[COMRAM] enum E29
+  err             1    6[COMRAM] enum E29
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         2       0       0
+      Locals:         2       0       0
+      Temps:          0       0       0
+      Totals:         4       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_writeCommand
+		_writeWord
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _ChargerReset *****************
+ Defined at:
+		line 149 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  err             1    9[COMRAM] enum E29
+  err             1    8[COMRAM] enum E29
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         2       0       0
+      Temps:          0       0       0
+      Totals:         2       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_ChargerMode
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _ChargerMode *****************
+ Defined at:
+		line 141 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+  chargerMode     2    4[COMRAM] struct .
+ Auto vars:     Size  Location     Type
+  err             1    7[COMRAM] enum E29
+  err             1    6[COMRAM] enum E29
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         2       0       0
+      Locals:         2       0       0
+      Temps:          0       0       0
+      Totals:         4       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_writeCommand
+		_writeWord
+ This function is called by:
+		_ChargerReset
+ This function uses a non-reentrant model
+
+
+ *************** function _writeWord *****************
+ Defined at:
+		line 103 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+  buf             2    2[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         2       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         2       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_SWAckI2C
+		_SWStopI2C
+		_SWWriteI2C
+ This function is called by:
+		_ChargerMode
+		_ChargingCurrent
+		_ChargingVoltage
+ This function uses a non-reentrant model
+
+
+ *************** function _SWStopI2C *****************
+ Defined at:
+		line 266 in file "src/swi2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_readWord
+		_writeWord
+ This function uses a non-reentrant model
+
+
+ *************** function _writeCommand *****************
+ Defined at:
+		line 43 in file "src/charger.c"
+ Parameters:    Size  Location     Type
+  cmd             1    wreg     enum E74
+ Auto vars:     Size  Location     Type
+  cmd             1    2[COMRAM] enum E74
+ Return value:  Size  Location     Type
+                  1    wreg      enum E29
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         1       0       0
+      Temps:          0       0       0
+      Totals:         1       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_SWAckI2C
+		_SWStartI2C
+		_SWWriteI2C
+ This function is called by:
+		_ChargerStatus
+		_ChargerMode
+		_ChargingCurrent
+		_ChargingVoltage
+ This function uses a non-reentrant model
+
+
+ *************** function _SWWriteI2C *****************
+ Defined at:
+		line 161 in file "src/swi2c.c"
+ Parameters:    Size  Location     Type
+  data_out        1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  data_out        1    1[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      char 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         1       0       0
+      Temps:          0       0       0
+      Totals:         1       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_Clock_test
+ This function is called by:
+		_writeCommand
+		_readWord
+		_writeWord
+		_SWPutsI2C
+ This function uses a non-reentrant model
+
+
+ *************** function _Clock_test *****************
+ Defined at:
+		line 51 in file "src/swi2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      char 
+ Registers used:
+		wreg, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_Delay10TCYx
+ This function is called by:
+		_SWReadI2C
+		_SWWriteI2C
+ This function uses a non-reentrant model
+
+
+ *************** function _Delay10TCYx *****************
+ Defined at:
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic18\d10tcyx.c"
+ Parameters:    Size  Location     Type
+  unit            1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  unit            1    0[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         1       0       0
+      Temps:          0       0       0
+      Totals:         1       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_Clock_test
+ This function uses a non-reentrant model
+
+
+ *************** function _SWStartI2C *****************
+ Defined at:
+		line 286 in file "src/swi2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_writeCommand
+ This function uses a non-reentrant model
+
+
+ *************** function _SWAckI2C *****************
+ Defined at:
+		line 13 in file "src/swi2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         0       0       0
+      Temps:          0       0       0
+      Totals:         0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_writeCommand
+		_readWord
+		_writeWord
+		_SWPutsI2C
+ This function uses a non-reentrant model
+
+
+
+MODULE INFORMATION
+
+Module		Function		Class		Link	Load	Size
+C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic18\d10tcyx.c
+		_Delay10TCYx   		CODE           	0660	0000	17
+
+C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic18\d10tcyx.c estimated size: 17
+
+src/swi2c.c
+		_SWAckI2C      		CODE           	062E	0000	33
+		_SWStartI2C    		CODE           	0670	0000	15
+		_SWStopI2C     		CODE           	060C	0000	35
+		_Clock_test    		CODE           	064E	0000	19
+		_SWGetsI2C     		CODE           	0280	0000	107
+		_SWReadI2C     		CODE           	0438	0000	71
+		_SWRestartI2C  		CODE           	05E6	0000	39
+		_SWWriteI2C    		CODE           	0214	0000	109
+
+src/swi2c.c estimated size: 428
+
+src/main.c
+		_main          		CODE           	04F2	0000	57
+
+src/main.c estimated size: 57
+
+src/charger.c
+		_ChargerStatus 		CODE           	047E	0000	59
+		_IsChargerStatusChange		CODE           	02EA	0000	99
+		_ChargingVoltage		CODE           	055C	0000	47
+		_ChargingCurrent		CODE           	058A	0000	47
+		_writeCommand  		CODE           	03A2	0000	79
+		_readWord      		CODE           	034C	0000	87
+		_ChargerMode   		CODE           	05B8	0000	47
+		_ChargerReset  		CODE           	04B8	0000	59
+		_writeWord     		CODE           	03F0	0000	73
+
+src/charger.c estimated size: 597
+
+shared
+		__initialization		CODE           	052A	0000	37
+		_coefficient_I 		SMALLCONST     	0210	0000	4
+		_coefficient_T 		SMALLCONST     	020D	0000	4
+		_coefficient_U 		SMALLCONST     	020A	0000	4
+		_coefficient_AS		SMALLCONST     	0201	0000	4
+		_coefficient_Remaining		SMALLCONST     	0204	0000	4
+		_coefficient_ACR		SMALLCONST     	0207	0000	4
+
+shared estimated size: 61
+

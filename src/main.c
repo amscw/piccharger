@@ -26,17 +26,15 @@ void main(void) {
  
     // initialize charger
     err = ChargerReset();           
-    err = ChargerVoltage(16500);
+    err = ChargingVoltage(16500);
     err = ChargingCurrent(1000);
     
     while (1)
     {
-        err = ChargerStatus(&g_ChargerStatus);
-        if (g_ChargerStatus.bits.POWER_FAIL)
+        if (IsChargerStatusChange() == ERR_TRUE)
         {
-            ChargerReset();    
-            ChargerVoltage(16500);
-            ChargingCurrent(1000);
+            
         }
+      
     }
 }
