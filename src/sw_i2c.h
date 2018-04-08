@@ -100,11 +100,13 @@ void SWRestartI2C ( void );
 void SWStopI2C ( void );
 
 signed char SWAckI2C( void );
+void SWIssueAckI2C( void );
 signed char Clock_test( void );
 signed int SWReadI2C( void );
 signed char SWWriteI2C( PARAM_SCLASS unsigned char data_out );
 signed char SWGetsI2C( PARAM_SCLASS unsigned char *rdptr, PARAM_SCLASS unsigned char length );
 signed char SWPutsI2C( PARAM_SCLASS unsigned char *wrptr );
+
 
 /**************************************************************************
 Macro       : SWPutcI2C

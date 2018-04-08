@@ -14,9 +14,29 @@
 // for test only
 #include "OneWire.h"
 
-static chargerStatus_t g_ChargerStatus;
-
 void main(void) {
-    ChargerStatus(&g_ChargerStatus);
-    return;
+    err_t err;
+    
+    // setup internal HFINTOSC postscaler 
+    OSCCONbits.IRCF = 0x6;  // 8Mhz
+    while(OSCCONbits.HFIOFS != 1);
+    
+    // all analog inputs as digital
+    ANSEL = 0;
+ 
+    // initialize charger
+    err = ChargerReset();           
+    err = ChargerVoltage(16500);
+    err = ChargingCurrent(1000);
+    
+    while (1)
+    {
+        err = ChargerStatus(&g_ChargerStatus);
+        if (g_ChargerStatus.bits.POWER_FAIL)
+        {
+            ChargerReset();    
+            ChargerVoltage(16500);
+            ChargingCurrent(1000);
+        }
+    }
 }

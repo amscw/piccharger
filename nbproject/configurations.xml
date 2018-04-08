@@ -4,17 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="plib" displayName="plib" projectFiles="true">
-        <logicalFolder name="SW_I2C" displayName="SW_I2C" projectFiles="true">
-          <itemPath>src/plib/SW_I2C/i2c_data.h</itemPath>
-          <itemPath>src/plib/SW_I2C/sw_i2c.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <itemPath>src/config.h</itemPath>
-      <itemPath>src/charger.h</itemPath>
-      <itemPath>src/DS2788_OneWireProtocol.h</itemPath>
-      <itemPath>src/OneWire.h</itemPath>
-      <itemPath>src/common.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -23,23 +12,18 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="plib" displayName="plib" projectFiles="true">
-        <logicalFolder name="SW_I2C" displayName="SW_I2C" projectFiles="true">
-          <itemPath>src/plib/SW_I2C/swacki2c.c</itemPath>
-          <itemPath>src/plib/SW_I2C/swckti2c.c</itemPath>
-          <itemPath>src/plib/SW_I2C/swgtci2c.c</itemPath>
-          <itemPath>src/plib/SW_I2C/swgtsi2c.c</itemPath>
-          <itemPath>src/plib/SW_I2C/swptci2c.c</itemPath>
-          <itemPath>src/plib/SW_I2C/swptsi2c.c</itemPath>
-          <itemPath>src/plib/SW_I2C/swrsti2c.c</itemPath>
-          <itemPath>src/plib/SW_I2C/swstpi2c.c</itemPath>
-          <itemPath>src/plib/SW_I2C/swstri2c.c</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <itemPath>src/main.c</itemPath>
-      <itemPath>src/charger.c</itemPath>
       <itemPath>src/DS2788_OneWireProtocol.c</itemPath>
+      <itemPath>src/DS2788_OneWireProtocol.h</itemPath>
       <itemPath>src/OneWire.c</itemPath>
+      <itemPath>src/OneWire.h</itemPath>
+      <itemPath>src/charger.c</itemPath>
+      <itemPath>src/charger.h</itemPath>
+      <itemPath>src/common.h</itemPath>
+      <itemPath>src/config.h</itemPath>
+      <itemPath>src/i2c_data.h</itemPath>
+      <itemPath>src/main.c</itemPath>
+      <itemPath>src/sw_i2c.h</itemPath>
+      <itemPath>src/swi2c.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

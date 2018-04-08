@@ -17,7 +17,7 @@ extern "C" {
 
     typedef union 
     {
-        struct fields {
+        struct {
             unsigned CHARGE_INHIBITED : 1;
             unsigned MASTER_MODE : 1;
             unsigned VOLTAGE_NOTREG : 1;
@@ -38,16 +38,42 @@ extern "C" {
         uint16_t word;
     } chargerStatus_t;
     
+    typedef union
+    {
+        struct {
+            unsigned INHIBIT_CHARGE : 1;
+            unsigned ENABLE_POLLING : 1;        // must be 0
+            unsigned POR_RESET : 1;
+            unsigned RESET_TO_ZERO : 1;         // must be 0
+            unsigned bit_4 : 1;                 // must be 1
+            unsigned BATTERY_PRESENT_MASK : 1;
+            unsigned POWER_FAIL_MASK : 1;
+            unsigned _7 : 1;                    // must be 1
+            unsigned _8_9 : 2;                  // must be 1
+            unsigned HOT_SHOP : 1;
+            unsigned _11_15 : 5;
+        } bits;
+        uint16_t word;
+    } chargerMode_t;
+    
     typedef enum cmd_
     {
         CHARGER_MODE = 0x12,
-        CHARGER_CURRENT = 0x14,
+        CHARGING_CURRENT = 0x14,
         CHARGER_VOLTAGE = 0x15,
         CHARGER_ALARM_WARNING = 0x16,
         CHARGER_STATUS = 0x13,
     } chargerCmd_t;
+   
     
-   err_t ChargerStatus(chargerStatus_t *pStatus);
+    extern chargerStatus_t g_ChargerStatus;
+    
+    err_t ChargerStatus(chargerStatus_t *pStatus);
+    err_t ChargerMode(chargerMode_t chargerMode);
+    err_t ChargerReset();
+    err_t ChargingCurrent(uint16_t I0);
+    err_t ChargerVoltage(uint16_t V0);
+
     
 #ifdef	__cplusplus
 }
