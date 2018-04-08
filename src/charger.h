@@ -73,9 +73,10 @@ extern "C" {
     err_t ChargingVoltage(uint16_t V0);
     err_t IsChargerStatusChange();
     inline chargerStatus_t GetChargerStatus();
-    
+    err_t ChargerConfig(uint16_t V0, uint16_t I0);
 
-
+#define DEFAULT_V0  16800
+#define DEFAULT_I0  1000
     
 #ifdef	__cplusplus
 }

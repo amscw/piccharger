@@ -11,6 +11,7 @@ enum op_t { WRITE, READ };
 //------------------------------------------------------------------------------
 #define CHARGER_ADDR        (0x9 << 1)
 #define CHECK_FAIL(foo) { err_t err = foo; if (err != ERR_OK) return err; }
+#define MAX_ATTEMPTS    3
 
 //------------------------------------------------------------------------------
 // local variables
@@ -146,18 +147,6 @@ err_t ChargerMode(chargerMode_t chargerMode)
     return ERR_OK;
 }
 
-err_t ChargerReset()
-{
-    mode.bits.POR_RESET = 1;
-    mode.bits.INHIBIT_CHARGE = 1;
-    CHECK_FAIL(ChargerMode(mode));
-//    __delay_ms(100);
-    mode.bits.INHIBIT_CHARGE = 0;
-    CHECK_FAIL(ChargerMode(mode));
-    
-    return ERR_OK;
-}
-
 err_t ChargingCurrent(uint16_t I0)
 {
     CHECK_FAIL(writeCommand(CHARGING_CURRENT));
@@ -172,6 +161,51 @@ err_t ChargingVoltage(uint16_t V0)
     CHECK_FAIL(writeWord(V0));
     
     return ERR_OK;
+}
+
+err_t ChargerConfig(uint16_t V0, uint16_t I0)
+{
+    err_t err;
+    uint8_t attempts = MAX_ATTEMPTS;
+
+    while( ((err = ChargingVoltage(V0)) != ERR_OK) && attempts-- )
+        __delay_ms(100);
+
+    if (err != ERR_OK) return err;
+    attempts = MAX_ATTEMPTS;
+    
+    while( ((err = ChargingCurrent(I0)) != ERR_OK) && attempts-- )
+        __delay_ms(100);
+    
+    return err;
+}
+
+/**
+ * reset I0 to 7mA, V0 to max; re-switch charger
+ * @return status
+ */
+err_t ChargerReset()
+{
+    err_t err;
+    uint8_t attempts = MAX_ATTEMPTS;
+    
+    // switch charger OFF
+    mode.bits.POR_RESET = 1;
+    mode.bits.INHIBIT_CHARGE = 1;
+    
+    while( ((err = ChargerMode(mode)) != ERR_OK) && attempts-- )
+        __delay_ms(100);
+    
+    if (err != ERR_OK) return err;
+    attempts = MAX_ATTEMPTS;
+    
+    // switch charger ON
+    mode.bits.POR_RESET = 0;
+    mode.bits.INHIBIT_CHARGE = 0;
+    while( ((err = ChargerMode(mode)) != ERR_OK) && attempts-- )
+        __delay_ms(100);
+    
+    return err;
 }
 
 /**
@@ -203,3 +237,5 @@ inline chargerStatus_t GetChargerStatus()
 {
     return status;
 }
+
+

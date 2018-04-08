@@ -25,15 +25,14 @@ void main(void) {
     ANSEL = 0;
  
     // initialize charger
-    err = ChargerReset();           
-    err = ChargingVoltage(16500);
-    err = ChargingCurrent(1000);
+    err = ChargerReset();
+    err = ChargerConfig(DEFAULT_V0, DEFAULT_I0);
     
     while (1)
     {
         if (IsChargerStatusChange() == ERR_TRUE)
         {
-            
+          
         }
       
     }
