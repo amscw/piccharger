@@ -259,7 +259,7 @@ int read_current_only()
 int read_ACR_only()
 {
     unsigned char ACR_MSB, ACR_LSB;
-    int res;
+    int res = 0;
 
     /*OneWire_Init();
     OneWire_SkipNetAddress();
@@ -274,7 +274,7 @@ int read_ACR_only()
     ACR_MSB = read_data(0x10);
     ACR_LSB = read_data(0x11);
 
-    res = (ACR_MSB<<8) + ACR_LSB;
+    res = ( ACR_MSB << 8 ) | ACR_LSB;
     return res;
 }
 

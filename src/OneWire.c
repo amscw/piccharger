@@ -7,6 +7,7 @@
 
 #include "OneWire.h"
 #include "common.h"
+#include <xc.h>
 
 //----------------------------------------------------------------------------//
 // Function:    OneWire_Init()
@@ -19,6 +20,7 @@ int OneWire_Init()
     ONE_IO = 0;
     ONE_DATA = 1;
 //    ONE_PULL = 1;
+    
     __delay_ms(50);
     OneWire_Reset();
     res = OneWire_Presence();
@@ -53,6 +55,7 @@ unsigned char OneWire_Presence()
     int count = 0;
     ONE_IO = 1;
     //__delay_us(60);
+    
     while( ONE_DATA == 0 )
     {
         count++;

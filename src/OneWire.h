@@ -14,7 +14,7 @@
 //#define SEARCH_ROM_ENABLE
 
 //--- Pins ---//
-#define ONE_DATA        LATB7 // RB7
+#define ONE_DATA        RB7
 #define ONE_IO          TRISB7
 
 //--- Constants ---//

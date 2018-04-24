@@ -32,6 +32,12 @@ static chargerMode_t mode = {
 
 static chargerStatus_t status;
 
+static struct setPoint_
+{
+    uint16_t I0;
+    uint16_t V0;
+} setPoint;
+
 //------------------------------------------------------------------------------
 // channel level support
 //------------------------------------------------------------------------------
@@ -126,9 +132,9 @@ static err_t writeWord(uint16_t buf)
 }
 
 //------------------------------------------------------------------------------
-// application level support
+// charger-specific level support
 //------------------------------------------------------------------------------
-err_t ChargerStatus(chargerStatus_t *pStatus)
+static err_t ChargerStatus(chargerStatus_t *pStatus)
 {
     if (!pStatus)
         return ERR_NULLPTR;
@@ -139,7 +145,7 @@ err_t ChargerStatus(chargerStatus_t *pStatus)
     return ERR_OK;
 }
 
-err_t ChargerMode(chargerMode_t chargerMode)
+static err_t ChargerMode(chargerMode_t chargerMode)
 {
     CHECK_FAIL(writeCommand(CHARGER_MODE));
     CHECK_FAIL(writeWord(chargerMode.word));
@@ -147,7 +153,7 @@ err_t ChargerMode(chargerMode_t chargerMode)
     return ERR_OK;
 }
 
-err_t ChargingCurrent(uint16_t I0)
+static err_t ChargingCurrent(uint16_t I0)
 {
     CHECK_FAIL(writeCommand(CHARGING_CURRENT));
     CHECK_FAIL(writeWord(I0));
@@ -155,7 +161,7 @@ err_t ChargingCurrent(uint16_t I0)
     return ERR_OK;
 }
 
-err_t ChargingVoltage(uint16_t V0)
+static err_t ChargingVoltage(uint16_t V0)
 {
     CHECK_FAIL(writeCommand(CHARGING_VOLTAGE));
     CHECK_FAIL(writeWord(V0));
@@ -163,22 +169,59 @@ err_t ChargingVoltage(uint16_t V0)
     return ERR_OK;
 }
 
+//------------------------------------------------------------------------------
+// application level support
+//------------------------------------------------------------------------------
+/**
+ * try to set points V0 and I0
+ * @param V0 in mV
+ * @param I0 im mA
+ * @return status
+ */
 err_t ChargerConfig(uint16_t V0, uint16_t I0)
 {
     err_t err;
     uint8_t attempts = MAX_ATTEMPTS;
 
     while( ((err = ChargingVoltage(V0)) != ERR_OK) && attempts-- )
-        __delay_ms(100);
+        __delay_ms(1);
 
-    if (err != ERR_OK) return err;
-    attempts = MAX_ATTEMPTS;
+    if (err == ERR_OK) 
+        setPoint.V0 = V0;
+    else return err;
     
+    attempts = MAX_ATTEMPTS;
     while( ((err = ChargingCurrent(I0)) != ERR_OK) && attempts-- )
-        __delay_ms(100);
+        __delay_ms(1);
+    
+    if (err == ERR_OK)
+        setPoint.I0 = I0;
     
     return err;
 }
+
+inline uint16_t ChargerGetCurrent() {
+    return setPoint.I0;
+}
+
+inline uint16_t ChargerGetVoltage() {
+    return setPoint.V0;
+}
+
+err_t ChargerSetCurrent(uint16_t I0)
+{
+    err_t err;
+    uint8_t attempts = MAX_ATTEMPTS;
+    
+    while( ((err = ChargingCurrent(I0)) != ERR_OK) && attempts-- )
+        __delay_ms(1);
+    
+    if (err == ERR_OK)
+        setPoint.I0 = I0;
+    
+    return err;
+}
+
 
 /**
  * reset I0 to 7mA, V0 to max; re-switch charger
@@ -194,16 +237,17 @@ err_t ChargerReset()
     mode.bits.INHIBIT_CHARGE = 1;
     
     while( ((err = ChargerMode(mode)) != ERR_OK) && attempts-- )
-        __delay_ms(100);
+        __delay_ms(1);
     
     if (err != ERR_OK) return err;
     attempts = MAX_ATTEMPTS;
+    __delay_ms(1000);   // wait for discharge caps..?
     
     // switch charger ON
     mode.bits.POR_RESET = 0;
     mode.bits.INHIBIT_CHARGE = 0;
     while( ((err = ChargerMode(mode)) != ERR_OK) && attempts-- )
-        __delay_ms(100);
+        __delay_ms(1);
     
     return err;
 }
@@ -219,7 +263,7 @@ err_t IsChargerStatusChange()
     chargerStatus_t tmp;
     
     while ( ((err = ChargerStatus(&tmp)) != ERR_OK) && attempts--) 
-        __delay_ms(100);
+        __delay_ms(1);
     
     if (err == ERR_OK)
     {    

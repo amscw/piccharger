@@ -66,14 +66,13 @@ extern "C" {
     } chargerCmd_t;
    
        
-    err_t ChargerStatus(chargerStatus_t *pStatus);
-    err_t ChargerMode(chargerMode_t chargerMode);
     err_t ChargerReset();
-    err_t ChargingCurrent(uint16_t I0);
-    err_t ChargingVoltage(uint16_t V0);
     err_t IsChargerStatusChange();
     inline chargerStatus_t GetChargerStatus();
     err_t ChargerConfig(uint16_t V0, uint16_t I0);
+    err_t ChargerSetCurrent(uint16_t I0);
+    inline uint16_t ChargerGetVoltage();
+    inline uint16_t ChargerGetCurrent();
 
 #define DEFAULT_V0  16800
 #define DEFAULT_I0  1000

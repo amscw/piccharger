@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/work/tmp/src/charger.c</file>
-            <file>file:/C:/work/tmp/src/main.c</file>
-            <file>file:/C:/work/tmp/src/common.h</file>
-            <file>file:/C:/work/tmp/src/charger.h</file>
-            <file>file:/C:/work/tmp/src/swi2c.c</file>
-            <file>file:/C:/work/tmp/src/sw_i2c.h</file>
-            <file>file:/C:/work/tmp/src/config.h</file>
+            <file>file:/C:/work/git/piccharger/src/config.h</file>
+            <file>file:/C:/work/git/piccharger/src/charger.c</file>
+            <file>file:/C:/work/git/piccharger/src/charger.h</file>
+            <file>file:/C:/work/git/piccharger/src/OneWire.c</file>
+            <file>file:/C:/work/git/piccharger/src/DS2788_OneWireProtocol.c</file>
+            <file>file:/C:/work/git/piccharger/src/main.c</file>
+            <file>file:/C:/work/git/piccharger/src/common.h</file>
+            <file>file:/C:/work/git/piccharger/src/alarms.c</file>
+            <file>file:/C:/work/git/piccharger/src/OneWire.h</file>
+            <file>file:/C:/work/git/piccharger/src/alarms.h</file>
         </group>
     </open-files>
 </project-private>
