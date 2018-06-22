@@ -4,14 +4,14 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>piccharger</name>
-            <creation-uuid>350d44a8-1c65-4d40-ad39-d12e59827235</creation-uuid>
+            <creation-uuid>78056e1d-c9ce-4dd3-a4c8-7a3e0d72aa54</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions/>
+            <header-extensions>h</header-extensions>
             <asminc-extensions/>
-            <make-dep-projects/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
         </data>
     </configuration>
 </project>
